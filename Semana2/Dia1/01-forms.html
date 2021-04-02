@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <header>
+    <h1>Formulario de Registro</h1>
+  </header>
+  <main>
+    <section>
+      <!-- Aquí crearemos nuestro formulario -->
+      <!-- Un formulario de registro de alguien -->
+      <form>
+        <!-- aquí vamos a poner nuestros inputs -->
+        <p>
+          Por favor llene la información solicitada
+        </p>
+        <label for="nombres">
+          Nombres
+        </label>
+        <input
+          type="text"
+          placeholder="Ej. Juan Eduardo"
+          id="nombres"
+          name="nombres"
+        >
+        <br>
+        <label for="apellidos">Apellidos</label>
+        <input 
+          type="text" 
+          placeholder="Ej. Perez Gonzales"
+          id="apellidos"
+        >
+        <br>
+        <label>Email</label>
+        <input
+          type="email"
+          placeholder="Ingresa tu correo"
+        >
+        <br>
+        <label>Nueva Contraseña</label>
+        <input 
+          type="password"
+          placeholder="Ingresa una contraseña de 6 letras"
+        >
+        <br>
+        <label>Edad</label>
+        <input type="number" placeholder="Ingresa tu edad">
+        <br>
+        <label>Género</label>
+        <br>
+        <input type="radio" name="genero" value="M">Masculino
+        <input type="radio" name="genero" value="F">Femenino
+        <input type="radio" name="genero" value="NC">Prefiero no compartirlo
+        <br>
+        <label>Hobbies</label>
+        <br>
+        <input type="checkbox" value="autos">Automotriz
+        <br>
+        <input type="checkbox" value="viajar">viajar
+        <br>
+        <input type="checkbox" value="bailar">bailar
+        <br>
+        <input type="checkbox" value="videojuegos">videojuegos
+        <br>
+        <input type="checkbox" value="musica">Escuchar Música
+        <br>
+        <br>
+        <label>Ciudad</label>
+        <select>
+          <option selected disabled>Elija una ciudad...</option>
+          <option value="AM">Amazonas</option>
+          <option value="AN">Ancash</option>
+          <option value="AP">Apurimac</option>
+          <option value="AR">Arequipa</option>
+          <option value="PI">Piura</option>
+          <option value="IC">Ica</option>
+          <option value="CU">Cusco</option>
+          <option value="LI">Lima</option>
+          <option value="MO">Moquegua</option>
+          <option value="JU">Juliacapulco</option>
+          <option value="TA">Tacna</option>
+          <option value="TR">Trujillo</option>
+          <option value="CA">Callao</option>
+        </select>
+        <label>Biografía</label>
+        <textarea></textarea>
+        <hr>
+        <input type="submit" value="Enviar">
+      </form>
+    </section>
+  </main>
+</body>
+</html>
