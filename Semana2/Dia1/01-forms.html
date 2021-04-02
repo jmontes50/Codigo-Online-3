@@ -25,6 +25,10 @@
           placeholder="Ej. Juan Eduardo"
           id="nombres"
           name="nombres"
+          required
+          minlength="3"
+          maxlength="12"
+          pattern="[A-Z a-z]+"
         >
         <br>
         <label for="apellidos">Apellidos</label>
@@ -32,22 +36,27 @@
           type="text" 
           placeholder="Ej. Perez Gonzales"
           id="apellidos"
+          required
+          pattern="[A-Z a-z]{1,20}"
         >
         <br>
         <label>Email</label>
         <input
           type="email"
           placeholder="Ingresa tu correo"
+          required
+          pattern="[A-Z a-z 0-9]{1,}@[A-Z a-z 0-9]{1,}.[A-Z a-z]{2,}."
         >
         <br>
         <label>Nueva Contraseña</label>
         <input 
           type="password"
           placeholder="Ingresa una contraseña de 6 letras"
+          required
         >
         <br>
         <label>Edad</label>
-        <input type="number" placeholder="Ingresa tu edad">
+        <input type="number" placeholder="Ingresa tu edad" min="0" max="120">
         <br>
         <label>Género</label>
         <br>
