@@ -40,3 +40,16 @@ h2.adicional{
 .adicional{
   font-family:Impact;
 }
+
+p[name="instrucciones"]{
+  font-style:italic;
+  color:green;
+}
+
+input[placeholder]{
+  background-color:yellowgreen;
+}
+
+input:placeholder-shown{
+  color:blue;
+}
