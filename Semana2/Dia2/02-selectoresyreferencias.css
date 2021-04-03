@@ -1,0 +1,42 @@
+/* etiqqueta, .clase, #id */
+article, h1{
+  background-color:steelblue;
+}
+
+/* todos los hijos (article) que tengan los section A CUALQUIER NIVEL*/
+section article{
+  color:lightgray;
+}
+
+/* al indicar > solamente utilizo los primeros hijos LI dentro de OL*/
+ol > li{
+  font-family:Arial;
+  color:red;
+}
+
+/* clases, id, etiquetas */
+ol > ul > li{
+  font-family: Verdana;
+  color:orange;
+}
+
+.seccion1 > h2{
+  color:teal;
+}
+
+#caja > span{
+  background-color:yellow;
+}
+
+h2{
+  /* !important solamente utilizenlo en caso de mucha necesidad */
+  color:tomato !important;
+}
+
+h2.adicional{
+  background-color:skyblue;
+}
+
+.adicional{
+  font-family:Impact;
+}
