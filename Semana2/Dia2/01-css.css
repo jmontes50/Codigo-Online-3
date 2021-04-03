@@ -1,0 +1,18 @@
+h1{
+  font-weight:bolder;
+  padding:20px;
+}
+
+/* .nombre_clase */
+/* clases = 1 a + */
+.azul{
+  background-color:blue;
+  color:white;
+}
+
+/* #nombre_id */
+/* ids = 01 solo */
+#footer1{
+  padding:20px;
+  background-color: purple;
+}

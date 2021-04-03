@@ -1,10 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Document</title>
-</head>
-<body>
-  
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <!-- 2da manera, es utilizar un style para el doc -->
+    <style>
+      h1{
+        font-family:Arial;
+        border:4px solid orange;
+      }
+      footer{
+        border:2px solid gray;
+      }
+    </style>
+    <!-- 3ra manera teniendo una hoja de estilos aparte -->
+    <link rel="stylesheet" href="./01-css.css">
+  </head>
+  <body>
+    <header>
+      <!-- 1ra manera, en la misma línea -->
+      <h1 style="background-color: teal; color:yellow; font-family:Courier;">
+        Estilos CSS
+      </h1>
+    </header>
+    <main>
+      <section class="azul">
+        <h1>Párrafos</h1>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi,
+          libero!
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus,
+          optio!
+        </p>
+      </section>
+    </main>
+    <footer>
+      <h2>Contacto</h2>
+      <div class="azul" id="footer1">
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor,
+          quidem.
+        </p>
+      </div>
+      <div class="azul">
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos,
+          accusamus.
+        </p>
+      </div>
+    </footer>
+  </body>
 </html>
