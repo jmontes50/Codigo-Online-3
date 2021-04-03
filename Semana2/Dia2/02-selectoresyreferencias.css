@@ -53,3 +53,52 @@ input[placeholder]{
 input:placeholder-shown{
   color:blue;
 }
+
+/* PSEUDOCLASSES */
+/* elemento:nth-child(posicion,odd, even) */
+p:nth-child(3){
+  font-style:italic;
+  font-weight:bold;
+  color:peru;
+}
+
+p:last-child{
+  border:2px solid orangered;
+}
+
+/* impar */
+tr:nth-child(odd){
+  background-color:salmon;
+}
+
+/* pares */
+tr:nth-child(even){
+  background-color: skyblue;;
+}
+
+/* clase para tablas */
+table, th, td{
+  border:1px solid black;
+  /* remover espacios entre celdas */
+  border-collapse: collapse;
+  /* centrar horizontal */
+  margin:0 auto;
+}
+
+tr:nth-child(3), tr:nth-child(4){
+  background-color:palegreen;
+}
+
+/* PseudoElementos */
+
+#principal::first-letter{
+  color:black;
+  font-size:40px;
+  font-weight:bold;
+}
+
+li::before{
+  color:purple;
+  content: "-";
+}
+
