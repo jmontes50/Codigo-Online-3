@@ -19,6 +19,10 @@
       width:500px;
       height:1500px;
       border:1px solid rebeccapurple;
+      margin-top:30px;
+      margin-left:25px;
+      /* va a ser que se vuelva una referencia para los elementos absolute hijos */
+      position:relative;
     }
     .hijo{
       width:100px;
@@ -28,12 +32,20 @@
     }
     /* caja1 no la tocamos */
     .caja2{
+      /* cuando solo pongo absolute con referencias a las direcciones (top, left, bottom, right) va a asumir como referencia la posición del body*/
+      /* absolute extrae de la estructura el elemento */
       position:absolute;
       top:40px;
       left:20px;
-      
+
       background-color: purple;
       color:white;
+      z-index:3; 
+    }
+    .caja3{
+      position:relative;
+      z-index:2;
+      background-color:salmon;
     }
   </style>
 </head>
