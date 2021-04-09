@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* reset */
+    *{
+      margin:0;
+      padding:0;
+      /* que el tamaño de ancho y alto que indiquemos sea tal cual */
+      box-sizing: border-box;
+      border:1px solid gray;
+    }
+    /* flexbox */
+    .menu{
+      width:100%;
+      height:300px;
+      background-color:lightblue;
+      display:flex;
+      /* me indica la dirección de mis elementos hijos */
+      flex-direction: row;
+      /* justify-content me permite alienar de forma horizontal */
+      justify-content: space-between;
+      /* space-around
+          space-evenly
+            space-between
+            center */
+      /* alisg-items me permite alienar de forma vertical */
+      align-items:center;
+
+      /* indicar si el tamaño que indique a mis elementos hijos se va a mantener si reduzco al padre */
+      /* wrap - se mantiene el tamaño */
+      /* nowrap - se achica */
+      flex-wrap: wrap;
+    }
+
+    .link{
+      background:lightsalmon;
+      height:50px;
+      width:100px;
+      padding:10px;
+    }
+    /* cuanto puede crecer un elemento según el espacio libre */
+    .link3{
+      flex-grow: 3;
+    }
+    /* cuanto se puede encoger un elemento */
+    .link6{
+      flex-shrink: 2;
+      /* align-self lo que hace es alinearse de forma independiente */
+      align-self: stretch;
+    }
+
+  </style>
+</head>
+<body>
+  <!-- vamois a simular que es una barra de navegación -->
+  <nav class="menu">
+        <div class="link">link1</div>
+        <div class="link">link2</div>
+        <div class="link link3">link3</div>
+        <div class="link">link4</div>
+        <div class="link">link5</div>
+        <div class="link link6">link6</div>
+    </nav>
+</body>
+</html>
