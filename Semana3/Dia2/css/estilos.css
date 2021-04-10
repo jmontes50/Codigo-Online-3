@@ -1,0 +1,63 @@
+/* variables */
+:root{
+  --color-primario:#FB8F1D;
+}
+
+/* reset */
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+  border:1px solid lightgray;
+}
+/* quitemos estilos de a */
+a{
+  color:black;
+  text-decoration: none;
+}
+
+/* remover estilos lista */
+ul{
+  list-style-type: none;
+}
+
+.container{
+  max-width:1000px;
+  padding:20px;
+  margin:0 auto;
+  /* esto aplica para margin y padding */
+  /* marginx2: arribaabajo derechaizquierda */
+  /* marginx4: arriba derecha abajo izquierda */
+}
+
+nav{
+  display:flex;
+  justify-content:space-between;
+  padding:10px;
+  font-family: 'Open Sans', sans-serif;
+  font-size:14px;
+}
+
+nav > ul{
+  display:flex;
+  align-items:center;
+}
+
+nav > ul > li{
+  margin:0 5px;
+}
+
+#btn-register{
+  /* var(--nombrevariable) */
+  background-color:var(--color-primario);
+  color:white;
+  padding:10px 20px;
+  border-radius:8px;
+}
+
+#btn-login{
+  background-color: white;
+  border:1px solid var(--color-primario);
+  padding:10px 20px;
+  border-radius:8px;
+}
