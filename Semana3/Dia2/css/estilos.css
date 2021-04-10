@@ -10,6 +10,15 @@
   box-sizing: border-box;
   border:1px solid lightgray;
 }
+/* agregando fuente local */
+@font-face {
+  /* nombre, como lo vamos a usar */
+  font-family: 'Inter';
+  /* la ubicación */
+  /* ../ subo un nivel en el directorio de carpetas */
+  src: url('../assets/fonts/Inter-Regular.woff');
+}
+
 /* quitemos estilos de a */
 a{
   color:black;
@@ -30,11 +39,13 @@ ul{
   /* marginx4: arriba derecha abajo izquierda */
 }
 
+/* estilos navegación */
+
 nav{
   display:flex;
   justify-content:space-between;
   padding:10px;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Open Sans',Arial, sans-serif;
   font-size:14px;
 }
 
@@ -61,3 +72,26 @@ nav > ul > li{
   padding:10px 20px;
   border-radius:8px;
 }
+
+/* estilos header */
+
+header{
+  display:flex;
+}
+
+.header-content{
+  width:45%;
+  display:flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding:30px;
+}
+
+.header-content > h1{
+  font-family: 'Inter';
+}
+
+header > img{
+  width:55%;
+}
+
