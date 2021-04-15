@@ -91,6 +91,24 @@ header{
   font-family: 'Inter';
 }
 
+.header-content > small {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.header-content > input{
+  padding:12px;
+  border-radius:6px;
+}
+
+.header-content > button{
+  background-color: var(--color-primario);
+  padding:12px;
+  color:white;
+  width:150px;
+  border-radius:10px;
+  font-family: 'Open Sans', sans-serif;
+}
+
 header > img{
   width:55%;
 }
