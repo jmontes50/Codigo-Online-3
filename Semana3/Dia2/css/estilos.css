@@ -147,4 +147,5 @@ header{
   font-family: 'Open Sans', sans-serif;
   font-weight: bold;
   color:var(--color-primario);
+  font-size:17px;
 }
