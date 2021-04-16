@@ -96,6 +96,7 @@ header{
   /* font-family: 'Inter'; */
   font-family: 'Playfair Display',serif;
   font-weight:700;
+  font-size: 64px;
 }
 
 .header-content > small {
@@ -116,7 +117,34 @@ header{
   font-family: 'Open Sans', sans-serif;
 }
 
-header > img{
+.header-img{
   width:55%;
+  padding:30px;
 }
 
+.header-img > img{
+  max-width:100%;
+}
+
+/* Tarjetas - destinos destacados */
+
+.destinations{
+  padding:30px;
+}
+
+.header-destination{
+  display:flex;
+  justify-content:space-between;
+  align-items: center;
+}
+
+.header-destination > h3{
+  font-family: 'Playfair Display', serif;
+  font-size:36px;
+}
+
+.header-destination > a{
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+  color:var(--color-primario);
+}
