@@ -1,0 +1,29 @@
+*{
+  border:0;
+  padding:0;
+  box-sizing: border-box;
+}
+
+.contenedor{
+  border:1px solid red;
+  display: grid;
+  /* para trabajar con grid necesito definir una plantilla de filas y columnas */
+  /* grid-template-columns: 200px 200px 200px 200px; */
+  /*   grid-template-columns: repeat(cuantas, tamaño); */
+  /* grid-template-columns: repeat(4, 200px); */
+  grid-template-columns: repeat(4, minmax(150px,400px));
+  /* fr = fraction es una unidad de medida que utiliza el espacio libre */
+  /* grid-template-columns:400px 1fr 1fr 2fr; */
+  grid-template-rows: 200px 200px 200px;
+  gap:20px;
+}
+
+.item{
+  border:1px solid blue;
+}
+
+.item:nth-of-type(1){
+  grid-column:1 / 4;
+  grid-row:2 / 4;
+}
+
