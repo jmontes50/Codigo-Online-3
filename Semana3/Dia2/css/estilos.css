@@ -149,3 +149,26 @@ header{
   color:var(--color-primario);
   font-size:17px;
 }
+
+.cards{
+  display:flex;
+  justify-content: space-between;
+}
+
+.card{
+  width:22%;
+  min-height: 280px;
+  position: relative;
+}
+
+.card > img{
+  max-width:100%;
+  min-height:100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.place{
+  position:absolute;
+  bottom:0;
+}
