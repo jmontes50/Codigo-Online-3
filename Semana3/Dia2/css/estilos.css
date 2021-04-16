@@ -8,7 +8,7 @@
   margin:0;
   padding:0;
   box-sizing: border-box;
-  border:1px solid lightgray;
+  /* border:1px solid lightgray; */
 }
 /* agregando fuente local */
 @font-face {
@@ -136,6 +136,7 @@ header{
   display:flex;
   justify-content:space-between;
   align-items: center;
+  margin-bottom: 20px;
 }
 
 .header-destination > h3{
@@ -171,4 +172,16 @@ header{
 .place{
   position:absolute;
   bottom:0;
+  background-color:white;
+  width:70%;
+  padding:5px;
+  font-family: 'Open Sans', serif;
+  /* border-radius: topleft topright bottomright bottomleft*/
+  /* o si desean verlo: desde la esquina superior izquierda en el sentido de las agujas del reloj */
+  border-radius:0 6px 0 0;
+  /* border-top-right-radius: 6px; */
+}
+
+.place > h4{
+  font-size:16px;
 }
