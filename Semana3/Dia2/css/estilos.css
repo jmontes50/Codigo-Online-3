@@ -19,6 +19,9 @@
   src: url('../assets/fonts/Inter-Regular.woff');
 }
 
+/* agregando fuentes por import */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap');
+
 /* quitemos estilos de a */
 a{
   color:black;
@@ -79,6 +82,8 @@ header{
   display:flex;
 }
 
+/* header-content izquierda */
+
 .header-content{
   width:45%;
   display:flex;
@@ -88,7 +93,9 @@ header{
 }
 
 .header-content > h1{
-  font-family: 'Inter';
+  /* font-family: 'Inter'; */
+  font-family: 'Playfair Display',serif;
+  font-weight:700;
 }
 
 .header-content > small {
