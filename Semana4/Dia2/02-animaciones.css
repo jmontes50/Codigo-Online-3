@@ -1,0 +1,47 @@
+#nave{
+  width:150px;
+}
+
+#nave:hover{
+  /* va la configuración de mi animación */
+  animation-name: mi_animacion;
+  animation-duration: 10s;
+}
+
+@keyframes mi_animacion{
+  /* definir en este caso 2 frames */
+  /* inicio */
+  0%{
+    transform:translate(0,0);
+  }
+  /* va a la derecha */
+  25%{
+    /* translate(X,Y) */
+    transform:translate(500px,0);
+    
+  }
+  /* giro, rotate(deg) me permite girar */
+  30%{
+    transform:translate(500px,0) rotate(90deg);
+  }
+  /* baje */
+  50%{
+    transform:translate(500px, 500px) rotate(90deg);
+  }
+  /* gire */
+  63%{
+    transform:translate(500px, 500px) rotate(180deg);
+  }
+  /* va a la izquierda */
+  75%{
+    transform:translate(0, 500px) rotate(180deg);
+  }
+  /* gira */
+  89%{
+    transform:translate(0, 500px) rotate(270deg);
+  }
+  /* sube */
+  100%{
+    transform:translate(0, 0) rotate(270deg);
+  }
+}
