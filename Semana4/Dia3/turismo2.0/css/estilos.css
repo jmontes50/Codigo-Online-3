@@ -203,6 +203,10 @@ header{
   z-index: -99;
 }
 
+.menu{
+  transition:0.5s;
+}
+
 /* @media screen and (condicional){
   y aqui iran los selectores como si se tratara por cada @mediaquery como si fuera una hoja css adicional
 } */
@@ -261,8 +265,8 @@ header{
     display:block;
   }
   /* checked verifica si esta con el aspita el elemento de tipo checkbox */
+  /* ~ este simbolo hace referencia a los elementos que esten después de #check en la estructura, en este caso menú */
   #check:checked ~ .menu{
     right:0;
   }
-
 }
