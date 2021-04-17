@@ -1,8 +1,9 @@
+/* #nave{
+  width:150px;
+} */
+
 #nave{
   width:150px;
-}
-
-#nave:hover{
   /* va la configuración de mi animación */
   animation-name: mi_animacion;
   animation-duration: 10s;
