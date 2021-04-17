@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- es recomendable poner el link del font para asegurarnos que este ya exista al momento de utilizarlo en nuestro archivo .css -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/estilos.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Barra de Navegación -->
+      <nav>
+        <img src="./assets/img/logo.png" alt="logo" />
+        <ul>
+          <li>
+            <a href="">Item 1</a>
+          </li>
+          <li>
+            <a href="">Item 2</a>
+          </li>
+          <li>
+            <a href="">Item 3</a>
+          </li>
+          <li>
+            <a href="">Item 4</a>
+          </li>
+          <li>
+            <button id="btn-login">Login</button>
+          </li>
+          <li>
+            <button id="btn-register">Register</button>
+          </li>
+        </ul>
+      </nav>
+      <!-- Header -->
+      <header>
+        <div class="header-content">
+          <h1>Explore and Travel</h1>
+          <small>Holiday Finder</small>
+          <input type="text" placeholder="Search Location" />
+          <button>Explore</button>
+        </div>
+
+        <div class="header-img">
+          <img src="./assets/img/img1.png" alt="logo header" />
+        </div>
+      </header>
+
+      <!-- Tarjetas -->
+
+      <section class="destinations">
+        <!-- headers - destinos -->
+        <div class="header-destination">
+          <h3>Destinos Destacados</h3>
+          <a href="#">View All</a>
+        </div>
+        <!-- header-tarjetas -->
+        <div class="cards">
+          <div class="card">
+            <img src="./assets/img/antartida.png" alt="antartida" />
+            <div class="place">
+              <h4>Syowa Station</h4>
+              <small>Antártida</small>
+            </div>
+          </div>
+
+          <div class="card">
+            <img src="./assets/img/izu.jpg" alt="antartida" />
+            <div class="place">
+              <h4>Izu</h4>
+              <small>Japón</small>
+            </div>
+          </div>
+
+          <div class="card">
+            <img src="./assets/img/ushuaia.jpg" alt="antartida" />
+            <div class="place">
+              <h4>Ushuaia</h4>
+              <small>Argentina</small>
+            </div>
+          </div>
+
+          <div class="card">
+            <img src="./assets/img/Cusco.jpg" alt="cusco" />
+            <div class="place">
+              <h4>Cusco</h4>
+              <small>Perú</small>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
