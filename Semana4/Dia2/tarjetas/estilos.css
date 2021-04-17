@@ -29,7 +29,7 @@ body{
 /* superior */
 .card-imagen{
   width:100%;
-  height:60%;
+  height:60%;/*dato vital importancia*/
   /* para cortar el conteido que se sobrepasa */
   overflow:hidden;
   /* relative es una referencia */
@@ -39,7 +39,7 @@ body{
 .card-imagen > img{
   width:100%;
   /* !! moviendo img 60px para arriba*/
-  transform:translate(0, -60px);
+  transform:translate(0, -60px); /*dato vital importancia*/
 }
 
 .card_fotos{
@@ -66,7 +66,7 @@ body{
 /* inferior */
 .card-info{
   padding:20px;
-  height:40%;
+  height:40%; /*dato vital importancia*/
 }
 
 .card_subtitulo{
@@ -78,9 +78,42 @@ body{
   margin-top:5px;
   font-size:14px;
   color:#333;
-  /*  */
+  /* dato de vital importancia */
   /* visibility es una propiedad que no afecta al DOM */
   visibility: hidden;
   /* opacity va de 0 a 1 como un porcentaje */
   opacity:0;
+}
+
+/* AQUÍ VA A COMENZAR LA MAGIA */
+/* cuando ponga el mouse encima de card, modificare la parte superior */
+.card:hover .card-imagen{
+  height:40%
+}
+/* cuando ponga el mouse encima de card, modificare el img que esta como primer hijo de card-imagen */
+.card:hover .card-imagen > img{
+  /* brigthness me permite modificar el brillo de una imagen con un valor de 0 a 1 */
+  filter:brightness(0.5);
+}
+
+.card:hover .card-info{
+  height:60%;
+}
+
+.card:hover .card_descripcion{
+  visibility: visible;
+  opacity: 1;
+}
+
+.card:hover{
+  /* box-shadow: desplazamientoX desplazamientoY difuminado color */
+  box-shadow: 0 0 20px black;
+  transform:scale(1.05);
+}
+
+/* Y LA CEREZA */
+/* 1. Selecciono card y
+2. selecciono todos los elementos que esten dentro de card */
+.card, .card *{
+  transition: all 0.2s ease;
 }
