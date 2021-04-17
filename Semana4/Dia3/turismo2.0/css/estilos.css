@@ -188,6 +188,12 @@ header{
   font-size:16px;
 }
 
+/* Menu */
+
+.show-menu-btn, .hide-menu-btn{
+  cursor:pointer;
+}
+
 /* @media screen and (condicional){
   y aqui iran los selectores como si se tratara por cada @mediaquery como si fuera una hoja css adicional
 } */
@@ -203,12 +209,10 @@ header{
   .header-content{
     height:300px;
   }
-
   /* cards */
   .cards{
     flex-direction: column;
   }
-
   .card{
     width:100%;
     height:300px;
