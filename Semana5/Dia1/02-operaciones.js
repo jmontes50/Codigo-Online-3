@@ -34,7 +34,7 @@ let miEdad = 30;
 // cuando utilizamos `` puedo poner dentro ${cosas_De_js} - Es un template string
 let texto = `Hola soy ${nombre} soy de Arequipa y tengo ${miEdad}`;
 
-console.log(texto)
+console.log(texto);
 
 //PROMPT
 //Es la primera manera de capturar datos
@@ -43,9 +43,9 @@ let cantidadPerretes = prompt("Cuantas mascotas tienes?");
 
 console.log(`Mascotas ${cantidadPerretes}`); 
 
-console.log(typeof cantidadPerretes)//todo lo ingresado en prompt es Texto
+console.log(typeof cantidadPerretes);//todo lo ingresado en prompt es Texto
 
 // let mascotasConvertidas1 = parseInt(cantidadPerretes);
 let mascotasConvertidas1 = +cantidadPerretes;
 
-console.log(typeof mascotasConvertidas1)
+console.log(typeof mascotasConvertidas1);
