@@ -34,30 +34,44 @@
 
 // console.log(alumnosSaludos)
 
-let conductores = [
-  {
-    nombre:"Lezly",
-    tieneMascarilla: false
-  },
-  {
-    nombre:"Daniel",
-    tieneMascarilla: true
-  },
-  {
-    nombre:"Jorge",
-    tieneMascarilla: false
-  },
-  {
-    nombre:"Linder",
-    tieneMascarilla: true
-  }
-];
 
-let puedePasar = conductores.filter(function(elemento, index){
-  // if(elemento.tieneMascarilla === true){
+//FILTER
+// let conductores = [
+//   {
+//     nombre:"Lezly",
+//     tieneMascarilla: false
+//   },
+//   {
+//     nombre:"Daniel",
+//     tieneMascarilla: true
+//   },
+//   {
+//     nombre:"Jorge",
+//     tieneMascarilla: false
+//   },
+//   {
+//     nombre:"Linder",
+//     tieneMascarilla: true
+//   }
+// ];
+
+// let puedePasar = conductores.filter(function(elemento, index){
+//   // if(elemento.tieneMascarilla === true){
+//   //   return elemento
+//   // }
+//   return elemento.tieneMascarilla === true
+// })
+
+// console.log(puedePasar);
+
+//FIND
+let dnis = ["21421412","32142142","21342148","01234567"];
+
+let encontrado = dnis.find(function(elemento, index){
+  // if(elemento === "01234567"){
   //   return elemento
   // }
-  return elemento.tieneMascarilla === true
+  return elemento === "01234567"
 })
 
-console.log(puedePasar);
+console.log(encontrado)
