@@ -1,16 +1,63 @@
-let bebidas = ["Inka Cola","Sprite","Frugos","Margarita"]
+//PUSH POP
 
-console.log(bebidas)
+// let bebidas = ["Inka Cola","Sprite","Frugos","Margarita"]
 
-let nuevaBebida = prompt("Ingrese una nueva Bebida")
+// console.log(bebidas)
 
-//push agrega un elemento al final de un arreglo
-bebidas.push(nuevaBebida)
+// let nuevaBebida = prompt("Ingrese una nueva Bebida")
 
-console.log(bebidas)
+// //push agrega un elemento al final de un arreglo
+// bebidas.push(nuevaBebida)
 
-let frutas = ["naranja","piña","fresas"]
+// console.log(bebidas)
 
-frutas.pop()
+// let frutas = ["naranja","piña","fresas"]
 
-console.log(frutas)
+// frutas.pop()
+
+// console.log(frutas)
+
+//MAP
+
+// let animales = ["gatos","perros","vacas","pinguinos","zorros"];
+
+// animales.forEach(function(elemento, index){
+//   console.log(`${index} - ${elemento}`)
+//   //forEach no Retorna
+// })
+
+// let alumnos = ["Veronica","Jhan","Erick","Juan Carlos","Violeta"];
+
+// let alumnosSaludos = alumnos.map(function(nombre, index){
+//   return `${index + 1} - Hola soy ${nombre}`
+// })
+
+// console.log(alumnosSaludos)
+
+let conductores = [
+  {
+    nombre:"Lezly",
+    tieneMascarilla: false
+  },
+  {
+    nombre:"Daniel",
+    tieneMascarilla: true
+  },
+  {
+    nombre:"Jorge",
+    tieneMascarilla: false
+  },
+  {
+    nombre:"Linder",
+    tieneMascarilla: true
+  }
+];
+
+let puedePasar = conductores.filter(function(elemento, index){
+  // if(elemento.tieneMascarilla === true){
+  //   return elemento
+  // }
+  return elemento.tieneMascarilla === true
+})
+
+console.log(puedePasar);
