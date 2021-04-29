@@ -1,4 +1,6 @@
+
 let peliculas = [
+  
   {
     "title": "2067",
     "vote_average": 4.8,
@@ -407,3 +409,34 @@ let tbody = document.getElementById("tbody");
  * 
  * TIP: En cada iteración crear los elementos que vean necesarios, TR TD, pueden aplicar for o forEach
  */
+
+//1. Que propiedades necesito????
+/**Nº - indice, Id = ID, original_title, release_date, original_language */
+//Un numerito de orden, el ID, el Nombre, el año y el idioma
+//2. itero, es un arreglo asi que es fácil decirle a la pc que lo recorra
+
+peliculas.forEach(function(peli, indice){
+  //se que es una tabla  necesito tr y el td
+  let tr = document.createElement("tr");
+  //creaba cada celda que necesitaba
+  let tdNro = document.createElement("td");
+  let tdId = document.createElement("td");
+  let tdNombre = document.createElement("td");
+  let tdAnio = document.createElement("td");
+  let tdIdioma = document.createElement("td");
+  //agregaba cada celda al tr creado
+  tr.appendChild(tdNro);
+  tr.appendChild(tdId);
+  tr.appendChild(tdNombre);
+  tr.appendChild(tdAnio);
+  tr.appendChild(tdIdioma);
+  //le añadia el contenido correspondiente a cada td
+  tdNro.innerHTML = indice + 1;
+  tdId.innerHTML = peli.id;
+  tdNombre.innerHTML = peli.original_title;
+  tdAnio.innerHTML = peli.release_date;
+  tdIdioma.innerHTML = peli.original_language;
+
+  tbody.appendChild(tr);
+  //ok hasta ahí ya es algo... 
+})
