@@ -117,3 +117,4 @@ let rotarImagenes = setInterval(function(){
 },1000)
 
 // clearInterval(rotarImagenes)
+//clearTimeout(nombre de la variable con la funcion)
