@@ -430,6 +430,7 @@ peliculas.forEach(function(peli, indice){
   tr.appendChild(tdNombre);
   tr.appendChild(tdAnio);
   tr.appendChild(tdIdioma);
+  //append(texto, o un elementoHTML)
   //le añadia el contenido correspondiente a cada td
   tdNro.innerHTML = indice + 1;
   tdId.innerHTML = peli.id;
