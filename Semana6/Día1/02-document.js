@@ -25,9 +25,9 @@ let subtitulo = document.querySelector("#subtitulo");
 console.log(subtitulo);
 
 let cajitas = document.querySelectorAll(".cajita");
-console.log(cajitas)
+console.log(cajitas);
 
 cajitas.forEach(function(caja){
   caja.innerHTML = "contenido caja";
-  caja.style.backgroundColor = "steelblue"
+  caja.style.backgroundColor = "steelblue";
 })
