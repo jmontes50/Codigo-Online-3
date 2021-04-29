@@ -31,3 +31,40 @@ cajitas.forEach(function(caja){
   caja.innerHTML = "contenido caja";
   caja.style.backgroundColor = "steelblue";
 })
+
+//Jugando con contenido
+
+let divContenido = document.getElementById("contenido");
+
+divContenido.innerHTML = `<h1>Título Contenido</h1>
+                            <p id="parrafo">texto</p>`;
+
+//1.creamos el elemento
+let lista = document.createElement("ul");
+
+//2.lo añadimos al DOM como un nodo más
+divContenido.appendChild(lista);
+
+let series = [
+  "Falcon and the Winter Soldier",
+  "The Young Pope",
+  "¿Quién mato a Sara?",
+  "WandaVision",
+  "Sherlock",
+  "Grey Anatomy",
+  "Breaking Bad",
+  "The Sopranos",
+  "The Good Doctor",
+  "The Office"
+];
+
+let textoLI = "";
+series.forEach(function(programa){
+  textoLI = textoLI + `<li>${programa}</li>`
+})
+
+lista.innerHTML = textoLI;
+
+let miParrafo = document.getElementById("parrafo");
+//si no me aseguro que un elemento agregado con innerHTML se haya agregado antes voy a tener errores o un undefined
+console.log(miParrafo)
