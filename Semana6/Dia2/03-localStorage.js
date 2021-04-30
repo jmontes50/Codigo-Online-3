@@ -35,6 +35,7 @@ localStorage.setItem("JSON",objAJSON);
 setTimeout(function(){
   let JSONobtenido = localStorage.getItem("JSON")
   let JSONdeVuelta = JSON.parse(JSONobtenido)
+  //JSON.parse(Texto) hace lo contrario convierte texto a JS
   console.log(JSONdeVuelta)
 },2000)
 
