@@ -47,5 +47,26 @@ let listaPlatillos = [
     stock:6,
     imagen:'https://images.unsplash.com/photo-1614563637806-1d0e645e0940?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80'
   }
-]
+];
 
+//1. siempre obtengamos los elementos que utilizaremos del HTML
+let divContenido = document.getElementById("contenido");
+
+let htmlTarjetas = "";
+
+listaPlatillos.forEach(function(plato){
+  htmlTarjetas = htmlTarjetas + `<div class="tarjeta">
+                                    <h2>${plato.nombre}</h2>
+                                  </div>`;
+})
+
+divContenido.innerHTML = htmlTarjetas;
+
+//TODO for tomorrow
+//1. A partir de una Lista, mostrar estos objetos dentro del navegador
+
+//2. Cuando demos click al botón agregar de cada platillo, este se agregue al carrito de compras de la derecha.
+
+//3. Agrupar productos.
+
+//4. mostrar la fecha, hacer que ese menu funcione, y conquistar el mundo...
