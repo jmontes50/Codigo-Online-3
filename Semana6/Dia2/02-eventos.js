@@ -64,5 +64,19 @@ btnVer.addEventListener("click",function(){
 input.addEventListener("keyup",function(evento){
   //lo que reciba la función del addEventListener va a ser otro objeto, la tecla y demás info
   // target = al elemento que estoy capturando
+  //target.value = el valor de mi input
   console.log(evento.target.value)
+})
+
+let goToGoogle = document.createElement("a");
+
+goToGoogle.setAttribute("href","http://google.com");
+goToGoogle.innerText = "Ir a Google";
+divContenido.appendChild(goToGoogle);
+
+//previene la acción por defecto de un elemento,
+//por ejemplo un hipervinculo
+//o un form con un submit
+goToGoogle.addEventListener("click", function(e){
+  e.preventDefault();
 })
