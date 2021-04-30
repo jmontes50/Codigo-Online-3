@@ -37,3 +37,17 @@ titulo2.style.borderRadius = "10px";
 imagen.setAttribute("alt","pinguinos");
 
 imagen.removeAttribute("alt");
+
+imagen.style.width = "200px";
+
+let frutas = ["Mango","Piña","Fresas","Naranja"];
+
+let ul = document.createElement("ul");
+
+divContenido.appendChild(ul);
+
+frutas.forEach(function(item){
+  let nuevoLI = document.createElement("li");
+  nuevoLI.innerHTML = item;
+  ul.appendChild(nuevoLI);
+})
