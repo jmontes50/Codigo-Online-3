@@ -49,6 +49,8 @@ let listaPlatillos = [
   }
 ];
 
+let carrito = [];
+
 //1. siempre obtengamos los elementos que utilizaremos del HTML
 let divContenido = document.getElementById("contenido");
 
@@ -83,6 +85,16 @@ let buscarPlatoPorId = function(id){
     }
   }
 };
+
+//esta función recibirá un objeto con todo el plato, y a partir de ese objeto creamos un pedido con la cantidad del plato
+let agregarACarrito = function(platoAPedir){
+  let pedido = {
+    plato:platoAPedir,
+    cantidad:1
+  }
+  //lo agregamos a la variable carrito
+  carrito.push(pedido)
+}
 
 //Obtenemos los btns-agregar, después que cambiamos el innerHTML de divContenido con las tarjetas
 //para que esas tarjetas esten en el DOM
