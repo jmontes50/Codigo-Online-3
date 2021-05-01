@@ -86,7 +86,7 @@ let buscarPlatoPorId = function(id){
   }
 };
 
-//esta función recibirá un objeto con todo el plato, y a partir de ese objeto creamos un pedido con la cantidad del plato
+//esta función recibirá un objeto con todo el plato, y a partir de ese objeto creamos un pedido con la cantidad del plato, platoApedir el parametro de la función sera un objeto
 let agregarACarrito = function(platoAPedir){
   let pedido = {
     plato:platoAPedir,
@@ -118,9 +118,17 @@ arrayBotonesAgregar.forEach(function(boton){
     let idPlato = evento.target.getAttribute("data-idplato");
     //Después que obtuvimos el idPlato
     let platoObtenido = buscarPlatoPorId(+idPlato); //vuelvo a encontrar el Plato, le pongo un + por delante para que sea Number
-
+    //agregamos al carrito el plato
+    agregarACarrito(platoObtenido);
+    console.log(carrito)
   })
 });
+
+//AQUI voy a poner la parte que me permita mostrar el carrito en la parte derecha
+//Tengo que usar mi variable carrito para convertirlo a HTML
+//Recuerden revisar la estructura del Array carrito, para que sepan que propiedades necesitan
+//Verifiquen como es la estructura HTML que esta dentro de tbody-carrito, en el preview
+//En el canal de Front lo van poniendo
 
 
 //TODO for tomorrow
