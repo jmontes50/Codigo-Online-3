@@ -98,12 +98,24 @@ let buscarPlatoPorId = function (id) {
 
 //esta función recibirá un objeto con todo el plato, y a partir de ese objeto creamos un pedido con la cantidad del plato, platoApedir el parametro de la función sera un objeto
 let agregarACarrito = function (platoAPedir) {
-  let pedido = {
-    plato: platoAPedir,
-    cantidad: 1,
-  };
-  //lo agregamos a la variable carrito
-  carrito.push(pedido);
+  //busco si el plato existe y encuentro su posición con findIndex
+  let posicionPlatoEncontrado = carrito.findIndex(function(pedido){
+    //si es que coincide retornare la posición del plato encontrado, si no existe será -1
+    if(pedido.plato.id === platoAPedir.id){
+      return pedido;
+    }
+  })
+  //si es que el valor -1, el plato no esta dentro de carrito, osea es nuevo
+  if(posicionPlatoEncontrado === -1){
+    //si es nuevo creo el pedido y lo agrego
+    let pedido = {
+      plato: platoAPedir,
+      cantidad: 1,
+    };
+    //lo agregamos a la variable carrito
+    carrito.push(pedido);
+  }
+  //imprimo el carrito después que he agregado un plato a la variable carrito
   imprimirCarrito();
 };
 
@@ -130,7 +142,7 @@ arrayBotonesAgregar.forEach(function (boton) {
     let platoObtenido = buscarPlatoPorId(+idPlato); //vuelvo a encontrar el Plato, le pongo un + por delante para que sea Number
     //agregamos al carrito el plato
     agregarACarrito(platoObtenido);
-    console.log(carrito);
+    // console.log(carrito);
   });
 });
 
@@ -140,11 +152,15 @@ arrayBotonesAgregar.forEach(function (boton) {
 //Verifiquen como es la estructura HTML que esta dentro de tbody-carrito, en el preview
 //Ese codigo ponganlo en una función para que se ejecute cada vez que agreguen al carrito
 //En el canal de Front lo van poniendo
+
+//obtenia la referencia de tbody-carrito del HTML
 let tbodyCarrito = document.getElementById("tbody-carrito");
 
+//creaba una función que se encargue de imprimir el carrito dentro del tbody
 let imprimirCarrito = function () {
+  //un string vacio
   let htmlCarrito = "";
-
+  //recorria carrito y por cada item que tenia creaba la fila que necesito para ponerla en el tbody
   carrito.forEach(function (pedido) {
     htmlCarrito =
       htmlCarrito +
