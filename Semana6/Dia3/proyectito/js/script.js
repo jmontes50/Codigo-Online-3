@@ -107,13 +107,15 @@ let agregarACarrito = function (platoAPedir) {
   })
   //si es que el valor -1, el plato no esta dentro de carrito, osea es nuevo
   if(posicionPlatoEncontrado === -1){
-    //si es nuevo creo el pedido y lo agrego
+    //si es nuevo creo el pedido y lo agrego, ES NUEVO
     let pedido = {
       plato: platoAPedir,
       cantidad: 1,
     };
     //lo agregamos a la variable carrito
     carrito.push(pedido);
+  }else{ //SI ES QUE YA EXISTE
+    carrito[posicionPlatoEncontrado].cantidad++;
   }
   //imprimo el carrito después que he agregado un plato a la variable carrito
   imprimirCarrito();
