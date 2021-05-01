@@ -119,6 +119,8 @@ let agregarACarrito = function (platoAPedir) {
   }
   //imprimo el carrito después que he agregado un plato a la variable carrito
   imprimirCarrito();
+  //ejecutamos la función que calculará el total y lo muestre en el navegador
+  mostrarTotal();
 };
 
 //Obtenemos los btns-agregar, después que cambiamos el innerHTML de divContenido con las tarjetas
@@ -176,6 +178,27 @@ let imprimirCarrito = function () {
 
   tbodyCarrito.innerHTML = htmlCarrito;
 };
+
+//obtengo una referencia del elemento tbody-resumen para ahi mostrar el total
+let tbodyResumen = document.getElementById("tbody-resumen");
+
+//creamos una función que me permita calcular el total y mostrarlo
+let mostrarTotal = function(){
+  //creo una variable que me permita acumular el total de todo el carrito
+  let total = 0;
+  //recorro carrito con un forEach
+  carrito.forEach(function(pedido){
+    //por cada item/pedido que encontremos en carrito, calcularé su total unitario (cant x precio)
+    let totalPorPedido = pedido.cantidad * pedido.plato.precio;
+    //y lo agrego a total
+    total = total + totalPorPedido;
+  })
+  // console.log(total);
+  tbodyResumen.innerHTML = `<tr>
+                              <td>TOTAL</td>
+                              <td>${total}</td>
+                            </tr>`;
+}
 
 //TODO for tomorrow
 //1. A partir de una Array, mostrar estos objetos dentro del navegador
