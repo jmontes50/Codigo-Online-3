@@ -54,16 +54,65 @@ let divContenido = document.getElementById("contenido");
 
 let htmlTarjetas = "";
 
+//transformando arreglo en html
 listaPlatillos.forEach(function(plato){
   htmlTarjetas = htmlTarjetas + `<div class="tarjeta">
-                                    <h2>${plato.nombre}</h2>
+                                    <div class="imagen">
+                                      <img src="${plato.imagen}" alt="${plato.nombre}">
+                                    </div>
+                                    <div class="texto">
+                                      <h4>${plato.nombre}</h4>
+                                      <p>${plato.descripcion}</p>
+                                      <div class="precio">
+                                        <span>S/ ${plato.precio}</span>
+                                        <button class="btn-agregar" data-idplato="${plato.id}">
+                                          Agregar
+                                        </button>
+                                      </div>
+                                    </div>
                                   </div>`;
-})
+});
 
 divContenido.innerHTML = htmlTarjetas;
 
+let buscarPlatoPorId = function(id){
+  for(let i = 0; i < listaPlatillos.length; i++){
+    //le vamos a pasar solamente un id y nos va a retornar todo el objeto
+    if(id === listaPlatillos[i].id){
+      return listaPlatillos[i]; //aca retorno el objeto que coincida con el id que le haya pasado
+    }
+  }
+};
+
+//Obtenemos los btns-agregar, después que cambiamos el innerHTML de divContenido con las tarjetas
+//para que esas tarjetas esten en el DOM
+//Obtenemos un HTML Collection que los podemos tratar como un arreglo
+//querySelectorAll(".btn-agregar")
+let btnsAgregar = document.getElementsByClassName("btn-agregar");
+
+//Si nos queremos asegurar que sea un arreglo (de tipo Array)
+let arrayBotonesAgregar = Array.from(btnsAgregar);
+// console.log(arrayBotonesAgregar)
+
+//recorremos el arreglo, y por cada iteración obtenemos c/botón 1 x 1
+arrayBotonesAgregar.forEach(function(boton){
+  //y por cada boton que recorramos le vamos a añadir un listener, del evento click
+  boton.addEventListener("click", function(evento){
+
+    //Necesito saber que botón estoy presionando, entonces lke agregamos un atributo personalizado al botón.
+    //el atributo data-idplato
+    //Y lo siguiente que hacemos es obtener el valor de ese atributo con el método getAttribute
+    //Gracias a que event.target hace referencia al mismo objeto HTML del que estamos capturando el evento
+    let idPlato = evento.target.getAttribute("data-idplato");
+    //Después que obtuvimos el idPlato
+    let platoObtenido = buscarPlatoPorId(+idPlato); //vuelvo a encontrar el Plato, le pongo un + por delante para que sea Number
+
+  })
+});
+
+
 //TODO for tomorrow
-//1. A partir de una Lista, mostrar estos objetos dentro del navegador
+//1. A partir de una Array, mostrar estos objetos dentro del navegador
 
 //2. Cuando demos click al botón agregar de cada platillo, este se agregue al carrito de compras de la derecha.
 
