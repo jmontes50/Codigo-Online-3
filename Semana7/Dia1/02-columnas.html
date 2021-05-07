@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0"
+      crossorigin="anonymous"
+    />
+
+    <title>Document</title>
+    <style>
+      .oscuro{
+        background:#ff8855;
+      }
+      .claro{
+        background:#cccccc;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- container, pero lo chevere es que según el ancho se centrará de forma automática -->
+    <main class="container">
+      <div class="row">
+        <!-- cuando pongo solamente col, las columnas se van a autodistribuir -->
+        <div class="col oscuro">
+          Mi 1ra columna
+        </div>
+        <div class="col claro">
+          Mi 2da columna
+        </div>
+        <div class="col oscuro">
+          Mi 3ra columna
+        </div>
+        <div class="col claro">
+          Mi 4ta columna
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-8 claro">
+          Columna de 8 
+        </div>
+        <div class="col-4 oscuro">
+          Columna de 4
+        </div>
+        <div class="col-3 claro">
+          Columna de 3, si sobra y pasa de 12, colapsa y se pone abajo
+        </div>
+      </div>
+    </main>
+
+
+
+    <!-- JavaScript Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
