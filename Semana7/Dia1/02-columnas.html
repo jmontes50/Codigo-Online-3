@@ -25,6 +25,7 @@
   <body>
     <!-- container, pero lo chevere es que según el ancho se centrará de forma automática -->
     <main class="container">
+      <h2>Columnas</h2>
       <div class="row">
         <!-- cuando pongo solamente col, las columnas se van a autodistribuir -->
         <div class="col oscuro">
@@ -50,6 +51,33 @@
         </div>
         <div class="col-3 claro">
           Columna de 3, si sobra y pasa de 12, colapsa y se pone abajo
+        </div>
+      </div>
+      <hr>
+      <h2>Columnas Responsivas</h2>
+      <h3><code>col-xl</code></h3>
+      <h5>xl->Las columnas colapsan si es menor a 1200px de ancho</h5>
+      <div class="row">
+        <div class="col-xl-6 oscuro">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. In, dolorem?
+          </p>
+        </div>
+        <div class="col-xl-6 claro">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. In, dolorem?
+          </p>
+        </div>
+      </div>
+      <hr>
+      <h3><code>col-lg</code></h3>
+      <h5>lg->las columnas colapsan a menos de 992px</h5>
+      <div class="row">
+        <div class="col-lg-6 oscuro">
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+        </div>
+        <div class="col-lg-6 claro">
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit.
         </div>
       </div>
     </main>
