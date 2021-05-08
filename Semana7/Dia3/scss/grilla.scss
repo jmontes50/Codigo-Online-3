@@ -23,6 +23,7 @@ $cant-col:12;
   @for $i from 1 through $cant-col{
     &__col-#{$i}{
       flex-basis: (100 / ($cant-col / $i) * 1%);
+      border:1px solid red;
     }
   }
 }
@@ -38,3 +39,5 @@ $cant-col:12;
     background-color: blue;
   }
 }
+
+
