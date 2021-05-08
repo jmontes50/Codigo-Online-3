@@ -37,3 +37,27 @@ h1{
 .resumenes{
   @include flexComponent(row,true);
 }
+
+.menu{
+  max-width:500px;
+  background-color: $color-secundario;
+
+  .menu__lista {
+    list-style: none;
+    height:50px;
+    @include flexComponent(row,false );
+
+    .menu__item{
+      margin-top:10px;
+
+      .menu__link{
+        color:white;
+        text-decoration: none;
+      }
+      
+      &:hover{
+        background-color: gray;
+      }
+    }
+  }
+}

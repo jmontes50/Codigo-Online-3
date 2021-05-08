@@ -21,3 +21,32 @@ h1 {
       -ms-flex-pack: center;
           justify-content: center;
 }
+
+.menu {
+  max-width: 500px;
+  background-color: #77685D;
+}
+.menu .menu__lista {
+  list-style: none;
+  height: 50px;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.menu .menu__lista .menu__item {
+  margin-top: 10px;
+}
+.menu .menu__lista .menu__item .menu__link {
+  color: white;
+  text-decoration: none;
+}
+.menu .menu__lista .menu__item:hover {
+  background-color: gray;
+}

@@ -1,0 +1,40 @@
+$grid:768;
+$cant-col:12;
+
+.container{
+  max-width: $grid * 1px;
+  margin:0 auto;
+
+  &--fluid{
+    margin:0;
+    max-width: 100%;
+  }
+
+  &__row{
+    display:flex;
+    flex-wrap: wrap;
+    width:100%;
+  }
+
+  &__col{
+    flex-basis: (100/ 4) * 1%;
+  }
+
+  @for $i from 1 through $cant-col{
+    &__col-#{$i}{
+      flex-basis: (100 / ($cant-col / $i) * 1%);
+    }
+  }
+}
+
+//estilos mas pero para que podamos ver donde comienza y donde acaba
+
+.container {
+  background-color:gray;
+  padding:10px;
+  box-sizing: border-box;
+
+  &__row{
+    background-color: blue;
+  }
+}
