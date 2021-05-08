@@ -7,8 +7,33 @@ $importante:false;
 h1{
   color: $color-primario;
   font-size: $tamanio-titulo;
-
+  //uso de booleanos
   @if $importante{
     background-color: $color-secundario;
   }
+}
+
+//mixins
+@mixin padding($valor,$bg,$color-texto){
+  padding: $valor;
+  background-color:$bg;
+  color:$color-texto;
+}
+
+@mixin flexComponent($direccion:row,$centrar:false){
+  flex-direction: $direccion;
+  display:flex;
+  @if $centrar{
+    justify-content: center;
+  } @else {
+    justify-content: space-between;
+  }
+}
+
+.boton{
+  @include padding(20px,blue,white);
+}
+
+.resumenes{
+  @include flexComponent(row,true);
 }

@@ -2,3 +2,22 @@ h1 {
   color: #F87575;
   font-size: 48px;
 }
+
+.boton {
+  padding: 20px;
+  background-color: blue;
+  color: white;
+}
+
+.resumenes {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
