@@ -1,8 +1,12 @@
 // variables
-$color-primario:#F87575;
-$color-secundario:#77685D;//colores
-$tamanio-titulo:48px;
-$importante:false;
+// $color-primario:#F87575;
+// $color-secundario:#77685D;//colores
+// $tamanio-titulo:48px;
+// $importante:false;
+
+//puedo importar el codigo de otro archivo scss pero este tiene que tener el _,
+// y lo llamo solamente por su nombre
+@import "./components/variables";
 
 h1{
   color: $color-primario;
