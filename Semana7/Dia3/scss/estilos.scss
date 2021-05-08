@@ -1,0 +1,14 @@
+// variables
+$color-primario:#F87575;
+$color-secundario:#77685D;//colores
+$tamanio-titulo:48px;
+$importante:false;
+
+h1{
+  color: $color-primario;
+  font-size: $tamanio-titulo;
+
+  @if $importante{
+    background-color: $color-secundario;
+  }
+}
