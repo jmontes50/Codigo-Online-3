@@ -14,4 +14,4 @@ btnModal.addEventListener("click", function(){
 
 setTimeout(function(){
   miModal.show()
-},2000)
+},2000);
