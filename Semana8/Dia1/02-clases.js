@@ -17,7 +17,8 @@ class Pokemon {
     this.Agilidad = agilidad;
     this.Resistencia = resistencia;
     this.Nivel = nivel;
-
+    //1ero construye
+    //2do después se ejecuta
     console.log("Construyendo");
     //Ejecutar un método de forma obligatoria cada vez que se instancie un objeto
     this.aparecer();
@@ -41,7 +42,7 @@ let Meowth = new Pokemon("Meowth", 30, "Normal", 70, 20, 900);
 console.log(Meowth);
 
 //utilizando métodos
-Pikachu.aparecer();
-Meowth.aparecer();
+// Pikachu.aparecer();
+// Meowth.aparecer();
 
 Pikachu.atacar(2);
