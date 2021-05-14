@@ -13,6 +13,7 @@ let buscarAlumno = (nombre, callback) => {
     callback(false)
   }, 3000)
 }
+
 buscarAlumno("Jhan", (existe) => {
   if(existe === true){
     console.log("El alumno existe")
