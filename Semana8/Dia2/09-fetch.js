@@ -37,3 +37,15 @@ fetch("https://reqres.in/api/users", cabecera)
 .then((datosCreados) => {
   console.log(datosCreados)
 })
+
+//Mockapi GET
+fetch("https://609f105d5f32be00171cd33b.mockapi.io/alumnos")
+.then((respuesta) => {
+  return respuesta.json() //status:code, headers ❌no hay datos
+})
+.then((alumnos) => {
+  console.log(alumnos) //✔ya tengo los datos
+})
+.catch((error) => {
+  console.log(error)
+})
