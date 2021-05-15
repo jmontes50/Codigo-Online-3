@@ -49,3 +49,35 @@ fetch("https://609f105d5f32be00171cd33b.mockapi.io/alumnos")
 .catch((error) => {
   console.log(error)
 })
+
+//PUT
+
+let alumnoEditado = {
+  nombres:"Ash",
+  apellidos:"Ketchup"
+}
+
+let configuracion = {
+  method:"PUT",
+  headers:{
+    "Content-Type":"application/json"
+  },
+  body:JSON.stringify(alumnoEditado)
+}
+
+//endpoint -> url/api/v1/usuario/:id , los : representan un parámetro que hay que indicarle
+fetch("https://609f105d5f32be00171cd33b.mockapi.io/alumnos/2",configuracion)
+.then((respuesta) => {
+  // if(respuesta.status !== 200){
+  //   //ejecutar acción
+  // }
+  return respuesta.json()
+})
+.then((alumnoModificado) => {
+  console.log(alumnoModificado)
+})
+.catch((error) => {
+  console.log(error)
+})
+
+//Axios
