@@ -47,3 +47,15 @@ let objBeneficios = {
 }
 
 calcularBeneficios(objBeneficios);
+
+//Desestructurar Arreglos
+let nombres = ["Linder","Daniel","Joel","Lezly","Jorgito"];
+
+let prosor = nombres[4];
+
+console.log(prosor);
+
+let [tutor2, boss, teacher, tutora, prosorcito] = nombres;
+
+console.log(tutora)
+
