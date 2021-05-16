@@ -1,0 +1,20 @@
+{
+  "name": "primer-proyecto",
+  "version": "1.0.0",
+  "description": "Proyecto Inicial desarrollado con Node",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon ./index.js"
+  },
+  "keywords": [
+    "Node",
+    "Javascript",
+    "Ejemplito"
+  ],
+  "author": "Osmar Montesinos",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.1"
+  }
+}
