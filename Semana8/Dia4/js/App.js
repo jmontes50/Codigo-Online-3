@@ -6,8 +6,9 @@
 //4.1 Detectar el evento click de un botón, para crear ✔
 //4.2 Vamos a invocar a un modal-✔
 //4.3 tener un método para enviar los datos - ✔
-//5. obtener los datos de los input del form, del modal
-//6. mandar los datos al metodo y crear el producto
+//5. obtener los datos de los input del form, del modal - ✔
+//6. mandar los datos al metodo y crear el producto - ✔
+
 import {Comunicaciones} from "./Comunicacion.mjs"
 import {Interface} from "./Interfaz.mjs"
 
@@ -40,5 +41,13 @@ btnGuardar.addEventListener("click", () => {
     descripcion: formulario["descripcion"].value,
     precio: formulario["precio"].value,
   }
-  console.table(nuevoProducto)
+  // console.table(nuevoProducto)
+  comunicacion.crearProducto(nuevoProducto)
+  .then(productoCreado => {
+    //ya creamos exitosamente nuestro producto
+    // console.log(productoCreado)
+    formulario.reset()
+    modalCrear.hide()
+  })
+  .catch(err => console.log(err))
 })
