@@ -19,14 +19,49 @@
         <a class="navbar-brand">CodiGO RestBar</a>
       </div>
     </nav>
-
+    
     <div class="container">
+      <h1 class="mt-4">Lista de Productos</h1>
+      <button class="btn btn-primary my-3 btn-lg" id="btn-crear">
+        Crear Producto
+      </button>
       <!-- Necesito un elemento HTML para referenciar desde JS -->
       <div class="row" id="platos">
         
       </div>
     </div>
 
+    <!-- Modal -->
+    <div class="modal fade" id="modal-crear" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Crear Producto</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form id="form-crear">
+              <div>
+                <label>Nombre Producto:</label>
+                <input type="text" class="form-control" name="nombre">
+              </div>
+              <div>
+                <label>Descripción Producto</label>
+                <input type="text" class="form-control" name="descripcion">
+              </div>
+              <div>
+                <label>Precio Producto</label>
+                <input type="number" class="form-control" name="precio">
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" id="btn-guardar">Crear</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- JavaScript Bundle with Popper -->
     <script
