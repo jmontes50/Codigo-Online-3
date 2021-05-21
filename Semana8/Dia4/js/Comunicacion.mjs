@@ -15,6 +15,22 @@ class Comunicaciones{
     })
   }
 
+  crearProducto(objProducto){
+    return new Promise((resolve, reject) => {
+      //PUT, POST necesitamos los datos y las cabeceras
+      let configuracion = {
+        method:'POST',
+        body:JSON.stringify(objProducto), //lo transformamos a texto
+        headers: {'Content-Type':'application/json'}
+      }
+
+      fetch(URL, configuracion)
+      //si lo hago así el return esta implicito
+      .then(respuesta => respuesta.json())
+      .then(productoCreado => resolve(productoCreado))
+      .catch(error => reject(error))
+    })
+  }
   //aquí pueden ir mas métodos
 }
 
