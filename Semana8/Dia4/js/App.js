@@ -48,6 +48,7 @@ btnGuardar.addEventListener("click", () => {
     // console.log(productoCreado)
     formulario.reset()
     modalCrear.hide()
+    getProductos() //obtengo otra vez los productos
   })
   .catch(err => console.log(err))
 })
