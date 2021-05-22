@@ -22,7 +22,10 @@ const App = () => {
       </button>
       <hr/>
       <Parrafo texto="Something in the way..."></Parrafo>
-      <Parrafo texto={miTexto}/>
+      <Parrafo 
+        texto={miTexto} 
+        banda="Daft Punk"
+      />
     </div>
   )
 }

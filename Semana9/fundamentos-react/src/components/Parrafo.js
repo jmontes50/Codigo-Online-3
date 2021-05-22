@@ -1,16 +1,22 @@
-import React from 'react'
+import React from "react";
 
-function Parrafo(props) {
-  console.log(props)
+function Parrafo({ texto, banda }) {
+  console.log(banda);
   return (
     <div>
       <p>
-        {props.texto}
+        {texto}
+        <br />
+
+        {/* renderizado condicional */}
+        {banda ? 
+        (<small>{banda}</small>)
+        :
+        (<small>No existe en la BD</small>)}
+        
       </p>
     </div>
-  )
+  );
 }
 
-export default Parrafo
-
-
+export default Parrafo;
