@@ -1,10 +1,11 @@
 import React from 'react'
 
-function Parrafo() {
+function Parrafo(props) {
+  console.log(props)
   return (
     <div>
       <p>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur, quidem!
+        {props.texto}
       </p>
     </div>
   )

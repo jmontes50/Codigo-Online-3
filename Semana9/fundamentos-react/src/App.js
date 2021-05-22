@@ -10,6 +10,8 @@ const App = () => {
     setEstado(estado + 1)
   }
 
+  let miTexto = "Instant Crush"
+
   return (
     <div>
       <h1>Hola React!! otra vez</h1>
@@ -19,8 +21,8 @@ const App = () => {
         Incrementar Número
       </button>
       <hr/>
-      <Parrafo></Parrafo>
-      <Parrafo/>
+      <Parrafo texto="Something in the way..."></Parrafo>
+      <Parrafo texto={miTexto}/>
     </div>
   )
 }
