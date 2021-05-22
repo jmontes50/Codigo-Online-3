@@ -1,6 +1,7 @@
 import React from 'react'
 
-function ListaTareas() {
+function ListaTareas({tareas}) {
+  console.log("misTareas", tareas)
   return (
     <div>
       

@@ -7,8 +7,8 @@ function App() {
 
   const [tarea, setTarea] = useState("Hola")
 
-  const anadirTarea = (nuevaTarea) => {
-    setTareas()//?
+  const anadirTarea = () => {
+    setTareas([...tareas, tarea])//?
   }
 
   const manejarTarea = (tarea) => {
@@ -18,11 +18,13 @@ function App() {
   return (
     <div>
       <h1>Todo - List</h1>
+      Tarea: {tarea}
       <InputTarea 
         tarea={tarea} 
         manejarTarea={manejarTarea}
+        anadirTarea={anadirTarea}
       />
-      <ListaTareas/>
+      <ListaTareas tareas={tareas}/>
     </div>
   )
 }

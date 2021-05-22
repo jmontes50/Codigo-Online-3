@@ -1,6 +1,6 @@
 import React,{useState} from 'react'
 
-function InputTarea({tarea, manejarTarea}) {
+function InputTarea({tarea, manejarTarea, anadirTarea}) {
   
   //Componentes Controlados
   //Todo Input debe estar amarrado a un estado
@@ -14,7 +14,10 @@ function InputTarea({tarea, manejarTarea}) {
         value={tarea}
         onChange={(e)=>{manejarTarea(e.target.value)}}
       />
-      <button>
+      {/* En caso tenga que pasar argumentos a la func */}
+      {/* <button onClick={()=>{anadirTarea()}}> */}
+      {/* En caso solamente quiero ejecutarla */}
+      <button onClick={anadirTarea}>
         Agregar Tarea
       </button>
     </div>
