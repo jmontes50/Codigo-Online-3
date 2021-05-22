@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import InputTarea from "./components/InputTarea"
 import ListaTareas from "./components/ListaTareas"
 
@@ -25,8 +25,12 @@ function App() {
     setTareas([...tareasTmp])
   }
 
+  useEffect(() => {
+    setTarea('')
+  }, [tareas])
+
   return (
-    <div>
+    <div className="container">
       <h1>Todo - List</h1>
       Tarea: {tarea}
       <InputTarea 
