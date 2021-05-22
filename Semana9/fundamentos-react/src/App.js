@@ -1,37 +1,28 @@
-import React, { Component } from "react";
+import {useState} from 'react';
+import Parrafo from './components/Parrafo'
 
-class App extends Component {
-  //1. Solamente puedo retornar un elemento en el return
-  //2. Si o si vamos a tener un state, los "estados" estarán guardados como propiedades de state
-  //3. podemos incluir JS en el JSX con {}
-  //4. el state es inmutable
-  //5. si queremos modificar el state, tenemos que utilizar el método setState
-  //6. Todas mis etiquetas tienen que estar cerradas
-  state = {
-    nombre:"Osmar",
-    contador:0
+const App = () => {
+  //useState
+  //const[miestado, funcEstado] = useState(estado_inicial)
+  const [estado, setEstado] = useState(0)
+
+  const incrementar = () => {
+    setEstado(estado + 1)
   }
 
-  incrementar(){
-    this.setState({
-      contador: this.state.contador + 1
-    })
-  }
+  return (
+    <div>
+      <h1>Hola React!! otra vez</h1>
+      <p>Contador: {estado}</p>
 
-  render() {
-    return (
-      <main>
-        <div>
-          <h1>Hola React!</h1>
-        </div>
-        <hr/>
-        <p>{this.state.nombre}</p>
-        <p>{100 + 540}</p>
-        <p>Contador: {this.state.contador}</p>
-        <button onClick={() => {this.incrementar()}}>Incrementar Contador</button>
-      </main>
-    );
-  }
+      <button onClick={incrementar}>
+        Incrementar Número
+      </button>
+      <hr/>
+      <Parrafo></Parrafo>
+      <Parrafo/>
+    </div>
+  )
 }
 
 export default App;
