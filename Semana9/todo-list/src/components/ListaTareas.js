@@ -1,6 +1,6 @@
 import React from 'react'
 
-function ListaTareas({tareas}) {
+function ListaTareas({tareas, eliminarTarea}) {
   // console.log("misTareas", tareas)
   //renderizar Listas
   return (
@@ -9,7 +9,11 @@ function ListaTareas({tareas}) {
         // este key tiene que ser único
         <p key={indice}>
           {item}
-          <button>X</button>
+          <button 
+            onClick={()=>{eliminarTarea(indice)}}
+          >
+            X
+          </button>
         </p>
         
       ))}

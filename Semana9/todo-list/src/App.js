@@ -15,6 +15,16 @@ function App() {
     setTarea(tarea)
   }
 
+  const eliminarTarea = (indice) => {
+    //obtengo los items de tarea por desestructuración
+    let tareasTmp = [...tareas]
+    //elimino 01 item a partir del indice que reciba
+    tareasTmp.splice(indice, 1)
+    console.log(tareasTmp)
+    //actualizo el estado, con el arreglo modificado
+    setTareas([...tareasTmp])
+  }
+
   return (
     <div>
       <h1>Todo - List</h1>
@@ -24,7 +34,10 @@ function App() {
         manejarTarea={manejarTarea}
         anadirTarea={anadirTarea}
       />
-      <ListaTareas tareas={tareas}/>
+      <ListaTareas 
+        tareas={tareas} 
+        eliminarTarea={eliminarTarea}
+      />
     </div>
   )
 }
