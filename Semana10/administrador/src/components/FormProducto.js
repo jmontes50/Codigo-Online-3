@@ -1,9 +1,10 @@
 import React, { useState, useEffect, useRef } from "react";
 
-function FormProducto() {
+function FormProducto({value, actualizarInput}) {
   const [colores, setColores] = useState([]);
   const [fotos, setFotos] = useState([]);
 
+  //useRef, es como un Id interno de React
   const inputColor = useRef();
   const inputFotos = useRef();
 
@@ -24,22 +25,46 @@ function FormProducto() {
       <form>
         <div>
           <label>Nombre</label>
-          <input type="text" className="form-control" />
+          <input 
+            type="text" 
+            className="form-control" 
+            name="nombre" 
+            value={value.nombre}
+            onChange={(e)=>{actualizarInput(e)}}
+          />
         </div>
 
         <div>
           <label>Descripción</label>
-          <input type="text" className="form-control" />
+          <input 
+            type="text" 
+            className="form-control" 
+            name="descripcion"
+            value={value.descripcion}
+            onChange={(e)=>{actualizarInput(e)}}
+            />
         </div>
 
         <div>
           <label>Precio</label>
-          <input type="number" className="form-control" />
+          <input 
+            type="number" 
+            className="form-control" 
+            name="precio"
+            value={value.precio}
+            onChange={(e)=>{actualizarInput(e)}}
+          />
         </div>
 
         <div>
           <label>Stock</label>
-          <input type="number" className="form-control" />
+          <input 
+            type="number" 
+            className="form-control" 
+            name="stock"
+            value={value.stock}
+            onChange={(e)=>{actualizarInput(e)}}
+          />
         </div>
 
         <div>
