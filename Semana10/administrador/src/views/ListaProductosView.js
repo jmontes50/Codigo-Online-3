@@ -16,12 +16,15 @@ function ListaProductosView() {
   };
 
   useEffect(() => {
+    //montaje, cambia un estado
+    //pero lo filtramos por su 2do parámetro
     getProductos();
   }, []);
 
   return (
     <div>
-      <table>
+      <h1>Productos Listados</h1>
+      <table className="table">
         <thead>
           <tr>
             <th>Nombre</th>

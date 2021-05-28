@@ -21,6 +21,14 @@ const obtenerProductos = async () => {
 // }
 }
 
+const crearProducto = async(nuevoProducto) => {
+  try {
+    
+  } catch (error) {
+    
+  }
+}
+
 export {
   obtenerProductos
 }
