@@ -3,6 +3,7 @@ import {Route} from "react-router-dom"
 import CrearProductoView from "./views/CrearProductoView"
 import ListaProductosView from "./views/ListaProductosView"
 import EditarProductoView from "./views/EditarProductoView"
+import CrearCategoriaView from "./views/CrearCategoriaView"
 
 function Routes() {
   return (
@@ -11,7 +12,7 @@ function Routes() {
       <Route exact path="/crearproducto" component={CrearProductoView} />
       {/* al darle en el path :algo indico que voy a pasar un parámetro llamado "algo" */}
       <Route exact path="/editarproducto/:id" component={EditarProductoView} />
-
+      <Route exact path="/crearcategoria" component={CrearCategoriaView} />
     </div>
   )
 }
