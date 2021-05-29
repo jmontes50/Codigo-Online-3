@@ -13,7 +13,7 @@ function CrearCategoriaView() {
     }
 
     try {
-      await crearCategoria(nuevaCategoria)
+      await crearCategoria({...nuevaCategoria})
     } catch (error) {
       console.log(error)
     }
@@ -25,6 +25,7 @@ function CrearCategoriaView() {
       <FormCategoria 
         value={value} 
         setValue={setValue}
+        manejarSubmit={manejarSubmit}
       />
     </div>
   )
