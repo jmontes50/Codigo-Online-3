@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { obtenerProductos } from "../services/productoService";
+import {Link} from "react-router-dom"
 
 function ListaProductosView() {
   const [productos, setProductos] = useState([]);
@@ -24,6 +25,9 @@ function ListaProductosView() {
   return (
     <div>
       <h1>Productos Listados</h1>
+      <Link className="btn btn-primary btn-lg my-2" to="/crearproducto">
+        Crear Producto
+      </Link>
       <table className="table">
         <thead>
           <tr>
