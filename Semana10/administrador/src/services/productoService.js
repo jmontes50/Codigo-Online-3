@@ -35,7 +35,20 @@ const crearProducto = async(nuevoProducto) => {
   }
 }
 
+const editarProducto = async (productoEditado, id) => {
+  try {
+    let headers = {
+      "Content-Type":"application/json"
+    }
+    let { data } = await axios.put(`${URL}/${id}`, productoEditado, {headers})
+    return data
+  } catch (error) {
+    console.log(error)
+  }
+}
+
 export {
   obtenerProductos,
-  crearProducto
+  crearProducto,
+  editarProducto
 }
