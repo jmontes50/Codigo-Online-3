@@ -1,8 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 
-function FormProducto({value, actualizarInput}) {
-  const [colores, setColores] = useState([]);
-  const [fotos, setFotos] = useState([]);
+function FormProducto({value, actualizarInput, setValue}) {
 
   //useRef, es como un Id interno de React
   const inputColor = useRef();
@@ -11,13 +9,13 @@ function FormProducto({value, actualizarInput}) {
   const anadirColor = (e) => {
     e.preventDefault();
     let nuevoColor = inputColor.current.value;
-    setColores([...colores, nuevoColor]);
+    setValue({...value, colores:[...value.colores, nuevoColor]})
   };
 
   const anadirFoto = (e) => {
     e.preventDefault()
     let nuevaFoto = inputFotos.current.value;
-    setFotos([...fotos, nuevaFoto]);
+    setValue({...value, fotos:[...value.fotos, nuevaFoto]})
   }
 
   return (
@@ -80,7 +78,7 @@ function FormProducto({value, actualizarInput}) {
           </button>
 
           <div className="list-group">
-            {colores.map((color, i) => (
+            {value.colores.map((color, i) => (
               <div className="list-group-item list-group-item-sm" key={i}>
                 Color:{" "}
                 <span
@@ -107,7 +105,7 @@ function FormProducto({value, actualizarInput}) {
             Agregar Foto
           </button>
           <ul className="list-group">
-              {fotos.map((fotito, i) => (
+              {value.fotos.map((fotito, i) => (
                 <li className="list-group-item" key={i}>{fotito}</li>
               ))}
           </ul>
