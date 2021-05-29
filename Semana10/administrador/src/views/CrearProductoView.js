@@ -1,6 +1,7 @@
 import React,{useState} from 'react'
 import FormProducto from "../components/FormProducto"
 import {crearProducto} from "../services/productoService"
+import Swal from "sweetalert2";
 
 function CrearProductoView() {
   const [value, setValue] = useState({
@@ -22,7 +23,18 @@ function CrearProductoView() {
 
   const manejarSubmit = async (e) => {
     e.preventDefault()
-    await crearProducto({...value})
+    try {
+      await crearProducto({...value})
+      Swal.fire({
+        icon:'success',
+        title:'Producto Creado Exitosamente',
+        showConfirmButton:false,
+        timer:2000
+      })
+    } catch (error) {
+      console.log(error)
+    }
+    
   }
   
   return (

@@ -1,14 +1,17 @@
-import React from 'react'
-import ListaProductosView from "./views/ListaProductosView"
-import CrearProductoView from "./views/CrearProductoView"
+import React from "react";
+import Routes from "./Routes";
+import { BrowserRouter as Router, Switch } from "react-router-dom";
 
 function App() {
   return (
-    <div className="container p-3">
-      <ListaProductosView/>
-      <CrearProductoView/>
-    </div>
-  )
+    <Router>
+      <div className="container p-3">
+        <Switch>
+          <Routes />
+        </Switch>
+      </div>
+    </Router>
+  );
 }
 
-export default App
+export default App;
