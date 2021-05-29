@@ -45,7 +45,11 @@ function ListaProductosView() {
               <td>{prod.precio}</td>
               <td>{prod.descripcion}</td>
               <td>{prod.stock}</td>
-              <td></td>
+              <td>
+                <Link className="btn btn-warning btn-sm" to={`/editarproducto/${prod.id}`}>
+                  Editar
+                </Link>
+              </td>
             </tr>
           ))}
         </tbody>

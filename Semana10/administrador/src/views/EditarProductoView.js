@@ -1,8 +1,11 @@
 import React,{useState} from 'react'
 import FormProducto from "../components/FormProducto"
 import {editarProducto} from "../services/productoService"
+import {useParams} from "react-router-dom"
 
 function EditarProductoView() {
+
+  let {id} = useParams();
 
   const [value, setValue] = useState({
     nombre:'',
@@ -23,12 +26,18 @@ function EditarProductoView() {
 
   const manejarSubmit = async (e) => {
     e.preventDefault()
-    await editarProducto(value, _id)
+    await editarProducto(value, id)
   }
 
   return (
     <div>
-      
+      <h1>Editar Producto</h1>
+      <FormProducto
+        value={value}
+        setValue={setValue}
+        actualizarInput={actualizarInput}
+        manejarSubmit={manejarSubmit}
+      />
     </div>
   )
 }
