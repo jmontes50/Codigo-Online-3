@@ -4,6 +4,7 @@ import CrearProductoView from "./views/CrearProductoView"
 import ListaProductosView from "./views/ListaProductosView"
 import EditarProductoView from "./views/EditarProductoView"
 import CrearCategoriaView from "./views/CrearCategoriaView"
+import ListaCategoriaView from "./views/ListaCategoriaView"
 
 function Routes() {
   return (
@@ -13,6 +14,7 @@ function Routes() {
       {/* al darle en el path :algo indico que voy a pasar un parámetro llamado "algo" */}
       <Route exact path="/editarproducto/:id" component={EditarProductoView} />
       <Route exact path="/crearcategoria" component={CrearCategoriaView} />
+      <Route exact path="/listacategoria" component={ListaCategoriaView} />
     </div>
   )
 }

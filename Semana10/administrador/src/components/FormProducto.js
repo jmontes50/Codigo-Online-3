@@ -4,7 +4,8 @@ function FormProducto({
   value, 
   actualizarInput, 
   setValue, 
-  manejarSubmit}) {
+  manejarSubmit,
+  categorias}) {
 
   //useRef, es como un Id interno de React
   const inputColor = useRef();
@@ -25,8 +26,8 @@ function FormProducto({
   return (
     <div>
       <form onSubmit={(e) => {manejarSubmit(e)}}>
-        <div>
-          <label>Nombre</label>
+        <div className="mb-3">
+          <label className="form-label">Nombre</label>
           <input 
             type="text" 
             className="form-control" 
@@ -36,8 +37,8 @@ function FormProducto({
           />
         </div>
 
-        <div>
-          <label>Descripción</label>
+        <div className="mb-3">
+          <label className="form-label">Descripción</label>
           <input 
             type="text" 
             className="form-control" 
@@ -47,8 +48,8 @@ function FormProducto({
             />
         </div>
 
-        <div>
-          <label>Precio</label>
+        <div className="mb-3">
+          <label className="form-label">Precio</label>
           <input 
             type="number" 
             className="form-control" 
@@ -58,8 +59,8 @@ function FormProducto({
           />
         </div>
 
-        <div>
-          <label>Stock</label>
+        <div className="mb-3">
+          <label className="form-label">Stock</label>
           <input 
             type="number" 
             className="form-control" 
@@ -69,8 +70,8 @@ function FormProducto({
           />
         </div>
 
-        <div>
-          <label>Colores</label>
+        <div className="mb-3">
+          <label className="form-label">Colores</label>
           <input type="color" className="form-control" ref={inputColor} />
           <button
             className="btn btn-primary btn-sm"
@@ -98,8 +99,8 @@ function FormProducto({
           </div>
         </div>
 
-        <div>
-          <label>Fotos</label>
+        <div className="mb-3">
+          <label className="form-label">Fotos</label>
           <input 
             type="text"
             ref={inputFotos}
@@ -114,6 +115,37 @@ function FormProducto({
               ))}
           </ul>
         </div>
+        <div className="mb-3">
+          <label className="form-label">Categoría</label>
+          {/* <input 
+            type="text" 
+            list="categorias" 
+            className="form-control" 
+            name="id_categoria"
+           
+            onChange={(e) => {actualizarInput(e)}}
+          />
+          <datalist id="categorias">
+            {categorias.map((cat, i) => (
+              <option key={i} value={cat.id}>
+                {cat.nombre}
+              </option>
+            ))}
+          </datalist>    */}
+          <select 
+            className="form-control"
+            name="id_categoria"
+            value={value.id_categoria}
+            onChange={(e)=>{actualizarInput(e)}}
+          >
+           {categorias.map((cat, i) => (
+              <option key={i} value={cat.id}>
+                {cat.nombre}
+              </option>
+            ))}
+          </select>
+        </div>
+          
         <div className="d-grid">
           <button type="submit" className="btn btn-primary">
             Guardar

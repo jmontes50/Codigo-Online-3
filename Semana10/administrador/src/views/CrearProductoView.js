@@ -1,8 +1,9 @@
-import React,{useState} from 'react'
+import React,{useState, useEffect} from 'react'
 import FormProducto from "../components/FormProducto"
 import {crearProducto} from "../services/productoService"
 import Swal from "sweetalert2";
 import {useHistory} from "react-router-dom"
+import {obtenerCategorias} from "../services/categoriaService"
 
 function CrearProductoView() {
   const [value, setValue] = useState({
@@ -11,8 +12,11 @@ function CrearProductoView() {
     precio:0,
     stock:0,
     fotos:[],
-    colores:[]
+    colores:[],
+    id_categoria:1
   })
+
+  const [categorias, setCategorias] = useState([])
 
   const history = useHistory()
 
@@ -22,6 +26,15 @@ function CrearProductoView() {
       ...value,
       [e.target.name]: e.target.value
     })
+  }
+
+  const getCategorias = async () => {
+    try {
+      let categoriasObtenidas = await obtenerCategorias()
+      setCategorias([...categoriasObtenidas])
+    } catch (error) {
+      console.log(error)
+    }
   }
 
   const manejarSubmit = async (e) => {
@@ -38,8 +51,11 @@ function CrearProductoView() {
     } catch (error) {
       console.log(error)
     }
-    
   }
+
+  useEffect(() => {
+    getCategorias()
+  }, [])
   
   return (
     <div>
@@ -50,6 +66,7 @@ function CrearProductoView() {
         actualizarInput={actualizarInput} 
         setValue={setValue}
         manejarSubmit={manejarSubmit}
+        categorias={categorias}
       />
     </div>
   )

@@ -15,7 +15,7 @@ function CrearCategoriaView() {
     let nuevaCategoria = {
       nombre:value
     }
-    
+
     try {
       await crearCategoria({...nuevaCategoria})
       await Swal.fire({
@@ -26,7 +26,12 @@ function CrearCategoriaView() {
       })
       history.push('/')
     } catch (error) {
-      console.log(error)
+      Swal.fire({
+        icon:"error",
+        title:"Sucedio un error inesperado",
+        text:`${error}`,
+        showConfirmButton:true
+      })
     }
   }
 
