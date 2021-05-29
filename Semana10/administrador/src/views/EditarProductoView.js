@@ -2,6 +2,7 @@ import React,{useState, useEffect} from 'react'
 import FormProducto from "../components/FormProducto"
 import {editarProducto, obtenerProductoPorId} from "../services/productoService"
 import {useParams} from "react-router-dom"
+import {obtenerCategorias} from "../services/categoriaService"
 
 function EditarProductoView() {
 
@@ -13,8 +14,11 @@ function EditarProductoView() {
     stock:0,
     precio:0,
     colores:[],
-    fotos:[]
+    fotos:[],
+    id_categoria:1
   })
+
+  const [categorias, setCategorias] = useState([])
 
   const actualizarInput = (e) => {
     e.preventDefault()
@@ -38,8 +42,18 @@ function EditarProductoView() {
     }
   }
 
+  const getCategorias = async() => {
+    try {
+      let categoriasObtenidas = await obtenerCategorias()
+      setCategorias([...categoriasObtenidas])
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
   useEffect(() => {
     getProducto()
+    getCategorias()
   }, [])
 
   return (
@@ -50,6 +64,7 @@ function EditarProductoView() {
         setValue={setValue}
         actualizarInput={actualizarInput}
         manejarSubmit={manejarSubmit}
+        categorias={categorias}
       />
     </div>
   )
