@@ -1,6 +1,10 @@
 import React, { useRef } from "react";
 
-function FormProducto({value, actualizarInput, setValue, manejarSubmit}) {
+function FormProducto({
+  value, 
+  actualizarInput, 
+  setValue, 
+  manejarSubmit}) {
 
   //useRef, es como un Id interno de React
   const inputColor = useRef();
