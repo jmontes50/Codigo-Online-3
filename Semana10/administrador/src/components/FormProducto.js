@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 
-function FormProducto({value, actualizarInput, setValue}) {
+function FormProducto({value, actualizarInput, setValue, manejarSubmit}) {
 
   //useRef, es como un Id interno de React
   const inputColor = useRef();
@@ -20,7 +20,7 @@ function FormProducto({value, actualizarInput, setValue}) {
 
   return (
     <div>
-      <form>
+      <form onSubmit={(e) => {manejarSubmit(e)}}>
         <div>
           <label>Nombre</label>
           <input 
@@ -109,6 +109,11 @@ function FormProducto({value, actualizarInput, setValue}) {
                 <li className="list-group-item" key={i}>{fotito}</li>
               ))}
           </ul>
+        </div>
+        <div className="d-grid">
+          <button type="submit" className="btn btn-primary">
+            Guardar
+          </button>
         </div>
       </form>
     </div>
