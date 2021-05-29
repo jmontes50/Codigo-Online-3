@@ -1,6 +1,6 @@
-import React,{useState} from 'react'
+import React,{useState, useEffect} from 'react'
 import FormProducto from "../components/FormProducto"
-import {editarProducto} from "../services/productoService"
+import {editarProducto, obtenerProductoPorId} from "../services/productoService"
 import {useParams} from "react-router-dom"
 
 function EditarProductoView() {
@@ -28,6 +28,19 @@ function EditarProductoView() {
     e.preventDefault()
     await editarProducto(value, id)
   }
+
+  const getProducto = async () => {
+    try {
+      let productoObtenido = await obtenerProductoPorId(id)
+      setValue({...productoObtenido})
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+  useEffect(() => {
+    getProducto()
+  }, [])
 
   return (
     <div>
