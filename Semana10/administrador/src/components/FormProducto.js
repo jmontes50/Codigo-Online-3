@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import {subirArchivo} from "../services/productoService"
 //esta variable me va a permitir, manejar mi archivo sin problemas
-let imagen;
+let imagenes;
 
 const asyncForEach = async(array, callback) => {
   for(let i = 0; i < array.length; i++){
@@ -33,21 +33,28 @@ function FormProducto({
     // setValue({...value, fotos:[...value.fotos, nuevaFoto]})
   }
 
-  const manejarImagen = async (e) => {
+  const ejecutarSubmit = async(e) => {
     e.preventDefault()
-    let misImagenes = e.target.files//esto es un Array
+    //primero subimos las imagenes
     let urls = []
 
-    await asyncForEach(misImagenes, async(imagen) => {
+    await asyncForEach(imagenes, async(imagen) => {
       let urlImagenSubida = await subirArchivo(imagen)
       urls.push(urlImagenSubida)
     })
-    console.log("urls Imagenes", urls)
+    //segundo recien ejecutamos el submit de la vista
+    manejarSubmit(e)
+  }
+
+  const manejarImagen = (e) => {
+    e.preventDefault()
+    let misImagenes = e.target.files//esto es un Array
+    imagenes = misImagenes
   }
 
   return (
     <div>
-      <form onSubmit={(e) => {manejarSubmit(e)}}>
+      <form onSubmit={(e) => {ejecutarSubmit(e)}}>
         <div className="mb-3">
           <label className="form-label">Nombre</label>
           <input 
@@ -130,9 +137,6 @@ function FormProducto({
             onChange={(e)=>{manejarImagen(e)}}
             multiple
           />
-          <button className="btn btn-primary btn-sm" onClick={(e)=>{anadirFoto(e)}}>
-            Agregar Foto
-          </button>
           <ul className="list-group">
               {value.fotos.map((fotito, i) => (
                 <li className="list-group-item" key={i}>{fotito}</li>
