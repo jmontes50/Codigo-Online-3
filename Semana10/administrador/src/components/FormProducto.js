@@ -1,4 +1,13 @@
 import React, { useRef } from "react";
+import {subirArchivo} from "../services/productoService"
+//esta variable me va a permitir, manejar mi archivo sin problemas
+let imagen;
+
+const asyncForEach = async(array, callback) => {
+  for(let i = 0; i < array.length; i++){
+    await callback(array[i]) //Se detiene la ejecución hasta que termine
+  }
+}
 
 function FormProducto({
   value, 
@@ -19,8 +28,21 @@ function FormProducto({
 
   const anadirFoto = (e) => {
     e.preventDefault()
-    let nuevaFoto = inputFotos.current.value;
-    setValue({...value, fotos:[...value.fotos, nuevaFoto]})
+    
+    // let nuevaFoto = inputFotos.current.value;
+    // setValue({...value, fotos:[...value.fotos, nuevaFoto]})
+  }
+
+  const manejarImagen = async (e) => {
+    e.preventDefault()
+    let misImagenes = e.target.files//esto es un Array
+    let urls = []
+
+    await asyncForEach(misImagenes, async(imagen) => {
+      let urlImagenSubida = await subirArchivo(imagen)
+      urls.push(urlImagenSubida)
+    })
+    console.log("urls Imagenes", urls)
   }
 
   return (
@@ -102,9 +124,11 @@ function FormProducto({
         <div className="mb-3">
           <label className="form-label">Fotos</label>
           <input 
-            type="text"
+            type="file"
             ref={inputFotos}
             className="form-control"
+            onChange={(e)=>{manejarImagen(e)}}
+            multiple
           />
           <button className="btn btn-primary btn-sm" onClick={(e)=>{anadirFoto(e)}}>
             Agregar Foto
