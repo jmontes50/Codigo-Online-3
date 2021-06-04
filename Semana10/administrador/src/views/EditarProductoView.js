@@ -30,7 +30,7 @@ function EditarProductoView() {
 
   const manejarSubmit = async (e, urlsFotos) => {
     e.preventDefault()
-    await editarProducto({...value,fotos:[...fotos, ...urlsFotos]}, id)
+    await editarProducto({...value,fotos:[...value.fotos, ...urlsFotos]}, id)
   }
 
   const getProducto = async () => {
