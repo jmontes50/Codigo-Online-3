@@ -26,13 +26,6 @@ function FormProducto({
     setValue({...value, colores:[...value.colores, nuevoColor]})
   };
 
-  const anadirFoto = (e) => {
-    e.preventDefault()
-    
-    // let nuevaFoto = inputFotos.current.value;
-    // setValue({...value, fotos:[...value.fotos, nuevaFoto]})
-  }
-
   const ejecutarSubmit = async(e) => {
     e.preventDefault()
     //primero subimos las imagenes
