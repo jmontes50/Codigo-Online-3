@@ -35,8 +35,10 @@ function FormProducto({
       let urlImagenSubida = await subirArchivo(imagen)
       urls.push(urlImagenSubida)
     })
+    //Cuando editemos no vamos a poder editar las fotos
+    //En caso no agreguemos fotos, no tocará las fotos anteriores
     //segundo recien ejecutamos el submit de la vista
-    manejarSubmit(e)
+    manejarSubmit(e, urls)
   }
 
   const manejarImagen = (e) => {
