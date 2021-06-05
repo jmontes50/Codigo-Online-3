@@ -1,13 +1,19 @@
-import { useState, useEffect, Fragment } from "react";
+import { useState, useEffect, Fragment, useContext } from "react";
 import { useParams } from "react-router-dom";
 import { obtenerProductoPorId } from "../services/productoService";
 import Loading from "../components/Loading";
+import {CarritoContext} from "../context/carritoContext"
 
 function ProductoView() {
   const [producto, setProducto] = useState({});
   const [cargando, setCargando] = useState(true);
 
   let { id } = useParams(); //me da un objeto con todos los parámetros
+  let {anadirProducto} = useContext(CarritoContext); //indico que voy a obtener del Context
+
+  const anadirProductoACarrito = () => {
+    anadirProducto({...producto})
+  }
 
   const getProducto = async () => {
     try {
@@ -67,7 +73,7 @@ function ProductoView() {
                   <span className="fw-bold" style={{ fontSize: "32px" }}>
                     S/ {producto.precio}
                   </span>
-                  <button className="btn btn-dark btn-lg">
+                  <button className="btn btn-dark btn-lg" onClick={anadirProductoACarrito}>
                     Añadir a Carrito
                   </button>
                 </div>

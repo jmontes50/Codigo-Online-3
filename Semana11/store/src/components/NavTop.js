@@ -1,4 +1,5 @@
 import React,{useState} from "react";
+import {Link} from "react-router-dom"
 
 function NavTop() {
   const [estaColapsado, setEstaColapsado] = useState(true)
@@ -35,19 +36,9 @@ function NavTop() {
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
-                Pricing
-              </a>
-            </li>
-            <li className="nav-item">
-              <a
-                className="nav-link disabled"
-                href="#"
-                tabindex="-1"
-                aria-disabled="true"
-              >
-                Disabled
-              </a>
+              <Link className="nav-link" to="/carrito">
+                Ir a Carrito
+              </Link>
             </li>
           </ul>
         </div>
