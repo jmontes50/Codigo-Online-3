@@ -3,6 +3,8 @@ import { useParams } from "react-router-dom";
 import { obtenerProductoPorId } from "../services/productoService";
 import Loading from "../components/Loading";
 import {CarritoContext} from "../context/carritoContext"
+import Swal from "sweetalert2"
+import {useHistory} from "react-router-dom"
 
 function ProductoView() {
   const [producto, setProducto] = useState({});
@@ -10,9 +12,24 @@ function ProductoView() {
 
   let { id } = useParams(); //me da un objeto con todos los parámetros
   let {anadirProducto} = useContext(CarritoContext); //indico que voy a obtener del Context
+  let history = useHistory()
 
   const anadirProductoACarrito = () => {
     anadirProducto({...producto})
+    Swal.fire({
+      icon:'success',
+      title:'Producto Añadido!',
+      showConfirmButton:true,
+      showDenyButton:true,
+      confirmButtonText:'Seguir Comprando',
+      denyButtonText:'Ir a carrito'
+    }).then((resultado)=>{
+      if(resultado.isConfirmed){
+        history.push('/')
+      }else if(resultado.isDenied){
+        history.push('/carrito')
+      }
+    })
   }
 
   const getProducto = async () => {
