@@ -1,14 +1,17 @@
-import React from 'react'
-import PortadaView from "./views/PortadaView"
-import NavTop from "./components/NavTop"
+import React from "react";
+import { Switch, BrowserRouter as Router } from "react-router-dom";
+import NavTop from "./components/NavTop";
+import Routes from "./Routes";
+
 function App() {
   return (
-    <div>
-      <NavTop/>
-      <PortadaView/>
-    </div>
-  )
+    <Router>
+      <NavTop />
+      <Switch>
+        <Routes />
+      </Switch>
+    </Router>
+  );
 }
 
-export default App
-
+export default App;
