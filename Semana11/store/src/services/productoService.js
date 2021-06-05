@@ -11,6 +11,16 @@ const obtenerProductos = async() => {
   }
 }
 
+const obtenerProductoPorId = async (id) => {
+  try {
+    let { data } = await axios.get(`${URL}/${id}`)
+    return data
+  } catch (error) {
+    throw error
+  }
+}
+
 export {
-  obtenerProductos
+  obtenerProductos,
+  obtenerProductoPorId
 }
