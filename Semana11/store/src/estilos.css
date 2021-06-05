@@ -1,0 +1,8 @@
+* {
+  font-family: "Spartan", sans-serif;
+}
+
+.card-img-top {
+  height: 400px;
+  object-fit: cover;
+}
