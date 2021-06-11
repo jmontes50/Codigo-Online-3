@@ -79,7 +79,11 @@ function GroupProducts({ productos, categoria, id_categoria, mostrarFiltro, setP
           .slice(0, 8)
           .map((prod, i) => (
             <div className="col-6 col-lg-3" key={i}>
-              <Link className="card mb-4" to={`/detalle/${prod.id}`}>
+              <Link 
+                className="card mb-4" 
+                to={`/detalle/${prod.id}`} 
+                style={{textDecoration:'none', color:'black'}}
+              >
                 <img className="card-img-top" src={prod.fotos[0]} alt="" />
                 <div className="card-body">
                   <h6 className="card-title">{prod.nombre}</h6>
