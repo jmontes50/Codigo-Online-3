@@ -5,6 +5,7 @@ import Slider from "@material-ui/core/Slider";
 function GroupProducts({ productos, categoria, id_categoria, mostrarFiltro, setProductos}) {
   const [toggleFiltro, setToggleFiltro] = useState(false);
   const [filtroPrecio, setFiltroPrecio] = useState([1,999]);
+  const [filtroNombre, setFiltroNombre] = useState("");
   // Creo una copia de mi arreglo de productos en un estado
   const [productosOriginal] = useState(productos)
   
@@ -41,7 +42,7 @@ function GroupProducts({ productos, categoria, id_categoria, mostrarFiltro, setP
           </button>
           {toggleFiltro ? (
             <div className="row p-3">
-              <div className="col-12 col-lg-3">
+              <div className="col-12 col-lg-6">
                 <label>Ajustar Precio</label>
                 <Slider 
                   value={filtroPrecio}
@@ -50,6 +51,17 @@ function GroupProducts({ productos, categoria, id_categoria, mostrarFiltro, setP
                   onChange={manejarFiltroPrecio}
                   getAriaValueText={textoPrecio}
                   valueLabelDisplay="auto"
+                />
+              </div>
+
+              <div className="col-12 col-lg-6">
+                <label className="form-label">Buscar por nombre</label>
+                <input 
+                  type="text" 
+                  className="form-control" 
+                  placeholder="Ej. Gorro"
+                  value={filtroNombre}
+                  onChange={(e) => {setFiltroNombre(e.target.value)}}
                 />
               </div>
             </div>
