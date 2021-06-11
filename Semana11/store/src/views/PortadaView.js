@@ -16,8 +16,8 @@ function PortadaView() {
 
   return (
     <div>
-      <GroupProducts productos={productos} categoria="Gamer" id_categoria="1"/>
-      <GroupProducts productos={productos} categoria="Comfy" id_categoria="2"/>
+      <GroupProducts productos={productos} categoria="Gamer" id_categoria="1" setProductos={setProductos}/>
+      <GroupProducts productos={productos} categoria="Comfy" id_categoria="2" setProductos={setProductos}/>
     </div>
   )
 }

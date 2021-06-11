@@ -1,14 +1,28 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Slider from "@material-ui/core/Slider";
 
-function GroupProducts({ productos, categoria, id_categoria, mostrarFiltro }) {
+function GroupProducts({ productos, categoria, id_categoria, mostrarFiltro, setProductos}) {
   const [toggleFiltro, setToggleFiltro] = useState(false);
-  const [filtroPrecio, setFiltroPrecio] = useState(1)
-
+  const [filtroPrecio, setFiltroPrecio] = useState([1,999]);
+  // Creo una copia de mi arreglo de productos en un estado
+  const [productosOriginal] = useState(productos)
+  
   const manejarFiltroPrecio = (evento, precio) => {
-    console.log(precio)
+    // después de cambiar el estado de filtroPrecio a un array, el parámetro precio es otro array
+   setFiltroPrecio(precio)
   }
+
+  const textoPrecio = (valor) => {
+    return `S/ ${valor}`
+  }
+
+  useEffect(() => {
+    let productosFiltrados = productosOriginal.filter((prod)=>{
+      return prod.precio >= filtroPrecio[0] && prod.precio <= filtroPrecio[1]
+    })
+    setProductos(productosFiltrados)  
+  },[filtroPrecio])
 
   return (
     <div className="container">
@@ -29,7 +43,14 @@ function GroupProducts({ productos, categoria, id_categoria, mostrarFiltro }) {
             <div className="row p-3">
               <div className="col-12 col-lg-3">
                 <label>Ajustar Precio</label>
-                <Slider min={1} max={999} onChange={manejarFiltroPrecio}/>
+                <Slider 
+                  value={filtroPrecio}
+                  min={1} 
+                  max={999} 
+                  onChange={manejarFiltroPrecio}
+                  getAriaValueText={textoPrecio}
+                  valueLabelDisplay="auto"
+                />
               </div>
             </div>
           ) : null}

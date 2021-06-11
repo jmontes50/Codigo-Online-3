@@ -20,7 +20,13 @@ function ComfyView() {
 
   return (
     <div>
-      <GroupProducts productos={productos} categoria="Comfy" id_categoria="2" mostrarFiltro={true}/>
+      <GroupProducts 
+        productos={productos} 
+        categoria="Comfy" 
+        id_categoria="2" 
+        mostrarFiltro={true}
+        setProductos={setProductos}
+      />
     </div>
   )
 }
