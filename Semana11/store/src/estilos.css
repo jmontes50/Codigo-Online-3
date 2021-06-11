@@ -8,7 +8,7 @@
 }
 
 .contenedor{
-  height:500px;
+  height:600px;
   display:grid;
   grid-template-columns: repeat(4, minmax(100px,1fr));
   grid-template-rows: repeat(2,minmax(100px,1fr));
