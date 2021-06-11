@@ -20,10 +20,12 @@ function GroupProducts({ productos, categoria, id_categoria, mostrarFiltro, setP
 
   useEffect(() => {
     let productosFiltrados = productosOriginal.filter((prod)=>{
-      return prod.precio >= filtroPrecio[0] && prod.precio <= filtroPrecio[1]
+      return prod.precio >= filtroPrecio[0] && 
+            prod.precio <= filtroPrecio[1] && 
+            prod.nombre.toLowerCase().includes(filtroNombre.toLowerCase())
     })
     setProductos(productosFiltrados)  
-  },[filtroPrecio])
+  },[filtroPrecio, filtroNombre])
 
   return (
     <div className="container">
