@@ -63,3 +63,7 @@
   font-weight: bold;
   color:black;
 }
+
+.bg-navbar{
+  background: rebeccapurple !important;
+}
