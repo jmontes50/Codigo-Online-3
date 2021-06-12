@@ -1,7 +1,8 @@
 import React, { useContext } from "react";
 import { CarritoContext } from "../context/carritoContext";
 import { useForm } from "react-hook-form";
-import { MapContainer, TileLayer } from "react-leaflet";
+import { MapContainer, TileLayer , Marker, Popup} from "react-leaflet";
+import iconMarker from "../assets/location.png"
 
 function ComprarView() {
   const { carrito } = useContext(CarritoContext);
@@ -99,6 +100,15 @@ function ComprarView() {
                 attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
               />
+              <Marker 
+                position={[-16.4001365, -71.5402707]} 
+                style={{backgroundColor:'rebeccapurple'}}
+                // icon={"https://image.flaticon.com/icons/png/512/1483/1483336.png"}
+              >
+                <Popup>
+                  <h5>'Mi Dirección es:...'</h5>
+                </Popup>
+              </Marker>
             </MapContainer>
 
             <button type="submit" className="btn btn-dark">
