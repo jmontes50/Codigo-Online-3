@@ -1,12 +1,15 @@
 import React,{useRef} from 'react'
 import {Carousel} from "bootstrap" //js
+import foto1 from "../assets/foto1.jpg"
+import foto2 from "../assets/foto2.jpg"
+import foto3 from "../assets/foto3.jpg"
 
 function CustomCarousel() {
 
   let refCarousel = useRef() //la referencia
 
   let myCarousel = refCarousel.current //el elemento HTML, getElementById
-  let bsCarousel = new Carousel(myCarousel) //la instancia Carousel de Bootstrap
+  let bsCarousel = new Carousel(myCarousel, {interval:10000}) //la instancia Carousel de Bootstrap
   console.log(bsCarousel)
 
   const avanzarCarousel = () => {
@@ -22,13 +25,17 @@ function CustomCarousel() {
       <div ref={refCarousel} className="carousel slide" data-bs-ride="carousel">
         <div className="carousel-inner">
           <div className="carousel-item active">
-            <img src="https://picsum.photos/600" className="d-block w-100" alt="..." />
+            <img src={foto1} className="d-block w-100" alt="..." />
+            <div className="bannerCarousel position-absolute top-50 start-50 translate-middle">
+              <small>Tu estilo</small>
+              <h5>Temporada Invierno</h5>
+            </div>
           </div>
           <div className="carousel-item">
-            <img src="https://picsum.photos/600" className="d-block w-100" alt="..." />
+            <img src={foto2} className="d-block w-100" alt="..." />
           </div>
           <div className="carousel-item">
-            <img src="https://picsum.photos/600" className="d-block w-100" alt="..." />
+            <img src={foto3} className="d-block w-100" alt="..." />
           </div>
         </div>
         <button className="carousel-control-prev" type="button" onClick={regresarCarousel}  data-bs-slide="prev">
