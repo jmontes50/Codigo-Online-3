@@ -1,12 +1,13 @@
-import React, { useContext } from "react";
+import React, {useState, useContext } from "react";
 import { CarritoContext } from "../context/carritoContext";
 import { useForm } from "react-hook-form";
-import { MapContainer, TileLayer , Marker, Popup} from "react-leaflet";
+import { MapContainer, TileLayer , Marker, Popup, useMapEvents} from "react-leaflet";
 // import iconMarker from "../assets/location.png"
 import L from "leaflet"
 
 function ComprarView() {
   const { carrito } = useContext(CarritoContext);
+  const [marcador, setMarcador] = useState([-16.4001365, -71.5402707])
   const {
     register,
     handleSubmit,
@@ -17,6 +18,19 @@ function ComprarView() {
     console.log(datos);
     //hacer una petición demas
   };
+
+  function AddMarker() {
+    // useMapEvents me permite detectar los eventos del MapContainer
+    const map = useMapEvents({
+      click: (e) => {
+        const { lat, lng } = e.latlng;
+        console.log(e.latlng)
+        // L.marker([lat, lng]).addTo(map);
+        setMarcador([lat,lng])
+      }
+    });
+    return null;
+  }
 
   // Estamos utilizando la clase L de leaflet para instanciar un nuevo icono
   const customIcon = new L.icon({
@@ -108,16 +122,16 @@ function ComprarView() {
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
               />
               
-              
-              {/* <Marker 
-                position={[-16.4001365, -71.5402707]} 
+              <AddMarker />
+              <Marker 
+                position={marcador} 
                 style={{backgroundColor:'rebeccapurple'}}
                 icon={customIcon}
               >
                 <Popup>
                   <h5>'Mi Dirección es:...'</h5>
                 </Popup>
-              </Marker> */}
+              </Marker>
             </MapContainer>
 
             <button type="submit" className="btn btn-dark">
