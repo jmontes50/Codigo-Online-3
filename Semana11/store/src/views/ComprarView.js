@@ -1,6 +1,7 @@
 import React,{useContext} from 'react'
 import {CarritoContext} from "../context/carritoContext"
 import {useForm} from "react-hook-form"
+import {MapContainer, TileLayer} from "react-leaflet"
 
 function ComprarView() {
 
@@ -81,6 +82,11 @@ function ComprarView() {
               />
               {errors.ciudad && <span className="text-danger">Solamente Letras</span>}
             </div>
+            
+            <MapContainer center={[-16,-71]} zoom={17} >
+
+            </MapContainer>
+            
             <button type="submit" className="btn btn-dark">
               Confirmar Compra
             </button>
