@@ -2,7 +2,8 @@ import React, { useContext } from "react";
 import { CarritoContext } from "../context/carritoContext";
 import { useForm } from "react-hook-form";
 import { MapContainer, TileLayer , Marker, Popup} from "react-leaflet";
-import iconMarker from "../assets/location.png"
+// import iconMarker from "../assets/location.png"
+import L from "leaflet"
 
 function ComprarView() {
   const { carrito } = useContext(CarritoContext);
@@ -16,6 +17,12 @@ function ComprarView() {
     console.log(datos);
     //hacer una petición demas
   };
+
+  // Estamos utilizando la clase L de leaflet para instanciar un nuevo icono
+  const customIcon = new L.icon({
+    iconUrl:"https://image.flaticon.com/icons/png/512/1483/1483336.png",
+    iconSize: [50, 50]
+  })
 
   return (
     <div className="container mt-4">
@@ -100,15 +107,17 @@ function ComprarView() {
                 attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
               />
-              <Marker 
+              
+              
+              {/* <Marker 
                 position={[-16.4001365, -71.5402707]} 
                 style={{backgroundColor:'rebeccapurple'}}
-                // icon={"https://image.flaticon.com/icons/png/512/1483/1483336.png"}
+                icon={customIcon}
               >
                 <Popup>
                   <h5>'Mi Dirección es:...'</h5>
                 </Popup>
-              </Marker>
+              </Marker> */}
             </MapContainer>
 
             <button type="submit" className="btn btn-dark">
