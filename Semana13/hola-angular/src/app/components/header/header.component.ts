@@ -7,9 +7,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
+  logueado:boolean = false
+
+  alumnos:Array<string> = [
+    "Jhan",
+    "Enrique",
+    "Juan",
+    "Veronica",
+    "Adriana",
+    "Violeta"
+  ]
+
+  url = "https://picsum.photos/300"
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  mostrarAlerta(){
+    alert("El usuario ha hecho click!")
   }
 
 }

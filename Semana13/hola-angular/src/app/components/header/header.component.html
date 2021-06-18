@@ -1,1 +1,25 @@
-<p>header works!</p>
+<code>Directiva ngIf</code>
+<hr>
+<div *ngIf="logueado else noLogueado">
+  Bienvenido
+</div>
+
+<ng-template #noLogueado>
+  Amigo Ingresa por favor
+</ng-template>
+
+<hr>
+
+<ul>
+  <li *ngFor="let alum of alumnos">
+    {{alum}}
+  </li>
+</ul>
+
+<!-- EventBinding me permite mandar algo o ejecutar algo desde la vista hacia el controlador -->
+<button (click)="mostrarAlerta()">
+  Haz Click!!!
+</button>
+
+<!-- property binding del .ts hacia la vista -->
+<img [src]="url" alt="...">
