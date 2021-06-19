@@ -16,4 +16,8 @@ export class ProductoService {
   obtenerProductos():Observable<any>{
     return this._Http.get(this.url)
   }
+
+  crearProducto(nuevoProducto:any):Observable<any>{
+    return this._Http.post(this.url, nuevoProducto)
+  }
 }

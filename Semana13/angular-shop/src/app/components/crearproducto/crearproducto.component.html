@@ -1,1 +1,51 @@
-<p>crearproducto works!</p>
+<h1>Crear Nuevo Producto</h1>
+<div>
+  <div>
+    <label class="form-label"> Nombre Producto: </label>
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Ej. Smartphone"
+      [(ngModel)]="nuevoProducto.nombre"
+    />
+  </div>
+  <div>
+    <label class="form-label">
+      Descripción
+    </label>
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Caracteristicas del producto"
+      [(ngModel)]="nuevoProducto.descripcion"
+    >
+  </div>
+  <div>
+    <label class="form-label">
+      Stock
+    </label>
+    <input
+      type="number"
+      class="form-control"
+      placeholder="20"
+      [(ngModel)]="nuevoProducto.stock"
+    >
+  </div>
+  <div>
+    <label class="form-label">
+      Precio
+    </label>
+    <input
+      type="number"
+      class="form-control"
+      placeholder="100"
+      [(ngModel)]="nuevoProducto.precio"
+    >
+  </div>
+  <button 
+    class="btn btn-primary" 
+    (click)="createProducto()"
+  >
+    Guardar
+  </button>
+</div>
