@@ -1,1 +1,15 @@
-<p>prod works!</p>
+<div class="card mb-2">
+  <img [src]="prod.fotos[0]" class="img-card-top">
+  <div class="card-body">
+    <h5 class="card-title">{{prod.nombre}}</h5>
+    <p class="card-text">
+      {{prod.descripcion}}
+    </p>
+    <p class="card-text">
+      <span class="fw-bold">
+        Precio: S/ 
+      </span>
+      {{prod.precio}}
+    </p>
+  </div>
+</div>
