@@ -1,28 +1,24 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './components/header/header.component';
+import { ProductosComponent } from './components/productos/productos.component';
 
 @NgModule({
-  //componentes
   declarations: [
     AppComponent,
-    HeaderComponent
+    ProductosComponent
   ],
-  //Modulos (Ruteo, Formularios)
   imports: [
     BrowserModule,
     AppRoutingModule,
-    CommonModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
-  //Servicios que tengamos
   providers: [],
-  //Por donde va a comenzar a trabajar mi aplicación
   bootstrap: [AppComponent]
 })
 export class AppModule { }

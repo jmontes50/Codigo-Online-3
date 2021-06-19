@@ -23,3 +23,12 @@
 
 <!-- property binding del .ts hacia la vista -->
 <img [src]="url" alt="...">
+
+<br>
+<input type="text" [(ngModel)]="texto">
+
+<button (click)="agregarAlumno()">
+  Agregar Alumno
+</button>
+
+<h3>Mi texto es: {{texto}}</h3>

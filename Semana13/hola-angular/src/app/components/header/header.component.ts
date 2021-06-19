@@ -20,6 +20,8 @@ export class HeaderComponent implements OnInit {
 
   url = "https://picsum.photos/300"
 
+  texto = "Agua"
+
   constructor() { }
 
   ngOnInit(): void {
@@ -27,6 +29,11 @@ export class HeaderComponent implements OnInit {
 
   mostrarAlerta(){
     alert("El usuario ha hecho click!")
+  }
+
+  agregarAlumno(){
+    this.alumnos.push(this.texto)
+    this.texto = ""
   }
 
 }
