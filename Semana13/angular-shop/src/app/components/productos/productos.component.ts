@@ -9,6 +9,7 @@ import { Subscription } from 'rxjs';
 })
 export class ProductosComponent implements OnInit {
 
+  misProductos:Array<object>
   subscripcionProd:Subscription
 
   //inyeccion por dependencias de nuestro servicio
@@ -19,7 +20,8 @@ export class ProductosComponent implements OnInit {
   getProductos(){
     this.subscripcionProd = this._sProducto.obtenerProductos()
     .subscribe((datos) => {
-      console.log("datosobtenidos",datos)
+      // console.log("datosobtenidos",datos)
+      this.misProductos = datos
     })
   }
 
