@@ -7,12 +7,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ProductosComponent } from './components/productos/productos.component';
 import { ProdComponent } from './components/prod/prod.component';
+import { CrearproductoComponent } from './components/crearproducto/crearproducto.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductosComponent,
-    ProdComponent
+    ProdComponent,
+    CrearproductoComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
